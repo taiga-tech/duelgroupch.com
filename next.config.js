@@ -1,5 +1,5 @@
 module.exports = {
-  target: "serverless",
+  target: 'serverless',
   reactStrictMode: true,
   trailingSlash: true,
   images: {
@@ -7,8 +7,8 @@ module.exports = {
     deviceSizes: [320, 500, 768, 1024, 1200, 1680, 2560],
     imageSizes: [60, 220],
     domains: [],
-    path: "/_next/image",
-    loader: "default",
+    path: '/_next/image',
+    loader: 'default',
   },
 
   env: {
