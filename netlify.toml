@@ -1,0 +1,12 @@
+[build.environment]
+  YARN_VERSION = "3.0.2"
+
+[build]
+  publish = ""
+  command = "yarn build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cache-nextjs"
