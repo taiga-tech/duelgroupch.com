@@ -2,7 +2,7 @@
 #   # YARN_VERSION = "3.0.2"
 
 [build]
-  publish = "out"
+  # publish = "out"
   command = "yarn build"
 
 [[plugins]]
