@@ -9,6 +9,8 @@
     "lintfix": "next lint --fix"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^3.9.0",
+    "netlify-plugin-cache-nextjs": "^1.6.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",

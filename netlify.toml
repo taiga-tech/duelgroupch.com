@@ -1,8 +1,8 @@
-[build.environment]
-  YARN_VERSION = "3.0.2"
+# [build.environment]
+#   # YARN_VERSION = "3.0.2"
 
 [build]
-  publish = ""
+  publish = "out"
   command = "yarn build"
 
 [[plugins]]
