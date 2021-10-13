@@ -1,5 +1,3 @@
-// react modules
-// next components
 // mui components
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
@@ -10,17 +8,20 @@ import Button from '@mui/material/Button'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 // local layout
 import { MainLayout } from 'layouts/main'
-import { BgMovie } from 'components/Movie/BgMovie'
+// local components
+import { BgMedia } from 'components/Hero/BgMedia'
+import { SocialSection } from 'components/Home/Sections/Social'
+import { VideoSection } from 'components/Home/Sections/Video'
+import { NewsSection } from 'components/Home/Sections/News'
 
 const Home = () => {
-  const seo = { page: 'Home', description: '' }
   const video = '/videos/op.mov'
   const poster = '/images/logo.png'
 
   return (
-    <MainLayout seo={seo} headerPosition="fixed">
+    <MainLayout headerPosition="fixed">
       <Box sx={{ height: '100vh', scroll: 'hidden' }}>
-        <BgMovie video={video} poster={poster}>
+        <BgMedia video={video} poster={poster}>
           <Container
             sx={{
               display: 'flex',
@@ -63,7 +64,16 @@ const Home = () => {
               </Button>
             </Grow>
           </Container>
-        </BgMovie>
+        </BgMedia>
+      </Box>
+      <Box id="news">
+        <NewsSection />
+      </Box>
+      <Box id="video">
+        <VideoSection />
+      </Box>
+      <Box id="social">
+        <SocialSection />
       </Box>
     </MainLayout>
   )
