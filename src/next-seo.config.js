@@ -17,6 +17,9 @@ export const SEO = {
     },
   ],
   openGraph: {
+    title: 'DUEL GROUP oficial',
+    site_name: 'DUEL GROUP oficial',
+    type: 'website',
     url: BaseUrl,
     images: [
       {
@@ -25,8 +28,6 @@ export const SEO = {
         type: 'image/png',
       },
     ],
-    type: 'website',
-    site_name: 'DUEL GROUP oficial',
   },
   twitter: {
     handle: '@DuelGroup',
