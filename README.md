@@ -15,3 +15,4 @@
 ## Todo
 - videojs-youtube
 - video.js
+- 'http://www.google.com/s2/favicons?domain='

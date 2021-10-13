@@ -10,15 +10,15 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Divider from '@mui/material/Divider'
 // mui icons
-import SettingsIcon from '@mui/icons-material/Settings'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 // local components
 import { ThemeContext } from 'components/MyThemeProvider'
+import { MenuItemLink } from 'components/App/MenuItemLink'
 // local const
-import { ROUTES } from 'const/route'
+import { ROUTE } from 'constants/route'
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -73,7 +73,7 @@ export const ThemeSwich = () => {
     setAnchorEl(null)
   }
 
-  const [theme, handleLightMode, handleSystemTheme, handleDarkMode] =
+  const [theme, lsTheme, handleLightMode, handleSystemTheme, handleDarkMode] =
     useContext(ThemeContext)
 
   return (
@@ -85,12 +85,12 @@ export const ThemeSwich = () => {
         aria-label="setting"
         title="Setting"
         onClick={handleClick}
-        sx={{
-          color: 'white',
-          '&:hober': { backgroundColor: 'rgba(255,255,255,.04)' },
-        }}
       >
-        <SettingsIcon />
+        {theme.palette.mode === 'dark' ? (
+          <DarkModeOutlinedIcon />
+        ) : (
+          <LightModeIcon />
+        )}
       </IconButton>
       <StyledMenu
         id="demo-customized-menu"
@@ -114,12 +114,10 @@ export const ThemeSwich = () => {
           Dark
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
-        <Link href={ROUTES.settings} passHref>
-          <MenuItem aria-label="more" title="More">
-            <MoreHorizIcon />
-            More
-          </MenuItem>
-        </Link>
+        <MenuItemLink href={ROUTE.settings.to} ariaLabel="more" title="More">
+          <MoreHorizIcon />
+          More
+        </MenuItemLink>
       </StyledMenu>
     </>
   )

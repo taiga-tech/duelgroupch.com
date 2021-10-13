@@ -5,12 +5,19 @@ import { CssBaseline } from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-export const ThemeContext = createContext([false, () => {}, () => {}, () => {}])
+export const ThemeContext = createContext([
+  false,
+  'system',
+  () => {},
+  () => {},
+  () => {},
+])
 
 export const MyThemeProvider = ({ children }) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
   // const preferredMode = prefersDarkMode ? 'on' : 'off'
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(true) // default: dark moide
+  const [lsTheme, setLsTheme] = useState()
 
   const handleLightMode = () => {
     localStorage.setItem('ThemeMode', 'light')
@@ -35,7 +42,10 @@ export const MyThemeProvider = ({ children }) => {
     } else {
       setDarkMode(false)
     }
-  }, [prefersDarkMode])
+    if (localStorage.getItem('ThemeMode')) {
+      setLsTheme(localStorage.getItem('ThemeMode'))
+    }
+  }, [prefersDarkMode, lsTheme])
 
   const theme = createTheme({
     components: {
@@ -55,7 +65,13 @@ export const MyThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider
-      value={[theme, handleLightMode, handleSystemTheme, handleDarkMode]}
+      value={[
+        theme,
+        lsTheme,
+        handleLightMode,
+        handleSystemTheme,
+        handleDarkMode,
+      ]}
     >
       <ThemeProvider theme={theme}>
         <CssBaseline />

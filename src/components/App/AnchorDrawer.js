@@ -4,15 +4,15 @@ import { useState } from 'react'
 import IconButton from '@mui/material/IconButton'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import Box from '@mui/material/Box'
-// import Divider from '@mui/material/Divider'
-//mui icons
+// mui icons
 import MenuIcon from '@mui/icons-material/Menu'
-import InboxIcon from '@mui/icons-material/Inbox'
-import MailIcon from '@mui/icons-material/Mail'
+// local components
+import { ListItemLink } from 'components/App/ListItemLink'
+// local constants
+import { ROUTES } from 'constants/route'
 
 export const AnchorDrawer = ({ position }) => {
   const [state, setState] = useState({
@@ -42,13 +42,11 @@ export const AnchorDrawer = ({ position }) => {
         onKeyDown={toggleDrawer(anchor, false)}
       >
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+          {ROUTES.map((Link, index) => (
+            <ListItemLink href={Link.to} title={Link.title} key={Link.title}>
+              <ListItemIcon>{Link.icon}</ListItemIcon>
+              <ListItemText primary={Link.title} />
+            </ListItemLink>
           ))}
         </List>
       </Box>
@@ -64,6 +62,9 @@ export const AnchorDrawer = ({ position }) => {
         sx={{
           color: '#fff',
           '&:hover': { backgroundColor: 'rgba(255,255,255,.04)' },
+          display: { md: 'none' },
+          height: '40px',
+          width: '40px',
         }}
       >
         <MenuIcon />

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 // local constants
-import { ROUTES } from 'const/route'
+import { ROUTE } from 'constants/route'
 
 export const LinkList = () => {
   return (
@@ -16,45 +16,47 @@ export const LinkList = () => {
         gap: 2,
       }}
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      {/* <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography fontWeight="bold" variant="body2">
           Products
         </Typography>
-        <Link href={ROUTES.home.to}>Videos</Link>
-        <Link href={ROUTES.events.to}>Events</Link>
-        {/* <Link href={ROUTES.home.to}>Blog</Link> */}
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Link href={ROUTE.home.to}>Videos</Link>
+        <Link href={ROUTE.events.to}>Events</Link>
+        <Link href={ROUTE.home.to}>Blog</Link>
+      </Box> */}
+      {/* <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography fontWeight="bold" variant="body2">
           Explore
         </Typography>
-        <Link href={ROUTES.home.to}>News</Link>
-        <Link href={ROUTES.home.to}>About</Link>
-        <Link href={ROUTES.home.to}>Blog</Link>
-      </Box>
+        <Link href={ROUTE.home.to}>News</Link>
+        <Link href={ROUTE.home.to}>About</Link>
+        <Link href={ROUTE.home.to}>Blog</Link>
+      </Box> */}
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography fontWeight="bold" variant="body2">
           Legal
         </Typography>
-        <Link href={ROUTES.home.to}>Terms</Link>
-        <Link href={ROUTES.home.to}>Privacy Policy</Link>
+        <Link href={ROUTE.legal.terms.to}>{ROUTE.legal.terms.title}</Link>
+        <Link href={ROUTE.legal.privacyPolicy.to}>
+          {ROUTE.legal.privacyPolicy.title}
+        </Link>
       </Box>
       {/* <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography fontWeight="bold" variant="body2">
               Resources
             </Typography>
-            <Link href={ROUTES.home.to}></Link>
+            <Link href={ROUTE.home.to}></Link>
           </Box> */}
       {/* <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography fontWeight="bold" variant="body2">
           Company
         </Typography>
-        <Link href={ROUTES.about}>About</Link>
-        <Link href={ROUTES.vision}>Vision</Link>
+        <Link href={ROUTE.about}>About</Link>
+        <Link href={ROUTE.vision}>Vision</Link>
         <Box sx={{ display: 'flex', alignItems: 'end' }}>
-          <Link href={ROUTES.careers}>Careers </Link>
+          <Link href={ROUTE.careers}>Careers </Link>
         </Box>
-        <Link href={ROUTES.support}>Support</Link>
+        <Link href={ROUTE.support}>Support</Link>
       </Box> */}
     </Box>
   )
