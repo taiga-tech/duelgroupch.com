@@ -1,7 +1,7 @@
 // mui components
 import Box from '@mui/material/Box'
 
-export const BgMovie = ({ children, video, poster }) => {
+export const BgMedia = ({ children, video, poster }) => {
   return (
     <Box style={{ height: '100vh' }}>
       <Box
