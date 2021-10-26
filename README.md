@@ -1,4 +1,4 @@
-# DUELGROUP oficial HP
+# DUELGROUP official HP
 
 ## Dependency
 
