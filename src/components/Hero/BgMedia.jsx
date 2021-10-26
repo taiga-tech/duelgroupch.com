@@ -2,6 +2,11 @@
 import Box from '@mui/material/Box'
 
 export const BgMedia = ({ children, video, poster }) => {
+  const isProd = process.env.NODE_ENV === 'production'
+  const vConf = {
+    autoPlay: isProd ? true : false,
+  }
+
   return (
     <Box style={{ height: '100vh' }}>
       <Box
@@ -21,7 +26,7 @@ export const BgMedia = ({ children, video, poster }) => {
           fontFamily: 'object-fit: cover',
         }}
         // poster={poster}
-        autoPlay
+        autoPlay={vConf.autoPlay}
         muted
         loop
         playsInline

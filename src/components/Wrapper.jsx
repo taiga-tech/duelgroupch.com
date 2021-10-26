@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 // local components
 import { MainLayout } from 'layouts/main'
 
-export const LegalWrapper = ({ seo, children }) => {
+export const Wrapper = ({ seo, maxWidth, children }) => {
   return (
     <MainLayout seo={seo}>
       <Box>
@@ -22,7 +22,7 @@ export const LegalWrapper = ({ seo, children }) => {
             {seo.page}
           </Typography>
         </Box>
-        <Container maxWidth="md">
+        <Container maxWidth={maxWidth}>
           <div style={{ marginTop: '95px' }} />
           <Box sx={{ lineHeight: '1.5rem' }}>{children}</Box>
         </Container>

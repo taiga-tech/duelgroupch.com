@@ -23,14 +23,20 @@ export const LinkList = () => {
         <Link href={ROUTE.home.to}>Videos</Link>
         <Link href={ROUTE.events.to}>Events</Link>
         <Link href={ROUTE.home.to}>Blog</Link>
-      </Box> */}
-      {/* <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography fontWeight="bold" variant="body2">
           Explore
         </Typography>
         <Link href={ROUTE.home.to}>News</Link>
         <Link href={ROUTE.home.to}>About</Link>
         <Link href={ROUTE.home.to}>Blog</Link>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Typography fontWeight="bold" variant="body2">
+          Resources
+        </Typography>
+        <Link href={ROUTE.home.to}>home</Link>
       </Box> */}
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography fontWeight="bold" variant="body2">
@@ -41,23 +47,6 @@ export const LinkList = () => {
           {ROUTE.legal.privacyPolicy.title}
         </Link>
       </Box>
-      {/* <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography fontWeight="bold" variant="body2">
-              Resources
-            </Typography>
-            <Link href={ROUTE.home.to}></Link>
-          </Box> */}
-      {/* <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        <Typography fontWeight="bold" variant="body2">
-          Company
-        </Typography>
-        <Link href={ROUTE.about}>About</Link>
-        <Link href={ROUTE.vision}>Vision</Link>
-        <Box sx={{ display: 'flex', alignItems: 'end' }}>
-          <Link href={ROUTE.careers}>Careers </Link>
-        </Box>
-        <Link href={ROUTE.support}>Support</Link>
-      </Box> */}
     </Box>
   )
 }

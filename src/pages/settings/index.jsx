@@ -10,21 +10,13 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import Divider from '@mui/material/Divider'
+// import Divider from '@mui/material/Divider'
 import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook'
-// mui modules
-import { styled } from '@mui/material/styles'
 // mui icons
 // local components
 import { MainLayout } from 'layouts/main'
 import { ThemeToggle } from 'components/App/Theme/ThemeToggle'
-// other components
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-
-const HashLink = styled((props) => <AnchorLink {...props} />)(({ theme }) => ({
-  color: theme.palette.mode === 'dark' ? '#fff' : '#000',
-  textDecoration: 'none',
-}))
+import { HashLink } from 'components/App/HashLink'
 
 const SettingWrapper = ({ title, subheader, children }) => {
   return (

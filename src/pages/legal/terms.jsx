@@ -3,13 +3,13 @@ import Link from 'next/link'
 // mui components
 import MuiLink from '@mui/material/Link'
 // local components
-import { LegalWrapper } from 'components/Legal/Wrapper'
+import { Wrapper } from 'components/Wrapper'
 
 const Terms = () => {
   const seo = { page: 'Terms' }
 
   return (
-    <LegalWrapper seo={seo}>
+    <Wrapper seo={seo} maxWidth="md">
       <p>
         この利用規約（以下，「本規約」といいます。）は，DUEL GROUP
         oficial（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
@@ -250,7 +250,7 @@ const Terms = () => {
         </li>
       </ol>
       <p align="right">以上</p>
-    </LegalWrapper>
+    </Wrapper>
   )
 }
 

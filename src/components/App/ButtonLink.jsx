@@ -3,11 +3,12 @@ import Link from 'next/link'
 // mui components
 import Button from '@mui/material/Button'
 
-const defaultSx = {
+const headerSx = {
   color: 'white',
   fontFamily: 'Unica One, Roboto, Helvetica, Arial, sans-serif',
   fontSize: '18px',
   '&:hover': { backgroundColor: 'rgba(255,255,255,0.04)' },
+  width: '80px',
 }
 
 export const ButtonLink = (
@@ -15,7 +16,7 @@ export const ButtonLink = (
   props
 ) => (
   <Link href={href} as={hrefAs} passHref>
-    <Button sx={sx ? sx : defaultSx} className={className} {...props}>
+    <Button sx={sx ? sx : headerSx} className={className} {...props}>
       {children}
     </Button>
   </Link>
