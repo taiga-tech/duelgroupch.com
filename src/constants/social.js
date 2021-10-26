@@ -40,7 +40,7 @@ export const SOCIAL = {
   },
   github: {
     title: 'GitHub',
-    href: 'https://github.com/taiga-tech/',
+    href: 'https://github.com/taiga-tech/duelgroupch.com/',
     icon: <GitHubIcon />,
     sx: {
       color: 'purple',
