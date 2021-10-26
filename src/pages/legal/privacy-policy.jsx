@@ -3,13 +3,13 @@ import Link from 'next/link'
 // mui components
 import MuiLink from '@mui/material/Link'
 // local components
-import { LegalWrapper } from 'components/Legal/Wrapper'
+import { Wrapper } from 'components/Wrapper'
 
 const PrivacyPolicy = () => {
   const seo = { page: 'Privacy Policy' }
 
   return (
-    <LegalWrapper seo={seo}>
+    <Wrapper seo={seo} maxWidth="md">
       <p>
         DUEL GROUP
         oficial（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
@@ -187,28 +187,28 @@ const PrivacyPolicy = () => {
           <MuiLink>お問い合わせフォーム</MuiLink>
         </Link>
         <br />
-        HP：
+        {/* HP：
         <MuiLink
-          href="https://taiga-tech.tk/info/contact/"
+          href="https://taiga-tech.tk/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://taiga-tech.tk/info/contact/
-        </MuiLink>
+          https://taiga-tech.tk/
+        </MuiLink> */}
         <br />
-        Eメールアドレス：taiga.dev.n@gmail.com
+        Eメールアドレス：groupduel@gmail.com
         <br />
         Twitte：
         <MuiLink
-          href="https://twitter.com/Taiga_dev/"
+          href="https://twitter.com/DuelGroup/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          @Taiga_dev
+          @DuelGroup
         </MuiLink>
       </p>
       <p align="right">以上</p>
-    </LegalWrapper>
+    </Wrapper>
   )
 }
 
