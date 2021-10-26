@@ -11,10 +11,10 @@ module.exports = withPWA({
   },
 
   images: {
-    // domains: ['https://sourceexample.com/image'],
-    deviceSizes: [320, 500, 768, 1024, 1200, 1680, 2560],
-    imageSizes: [60, 220],
-    domains: [],
+    domains: ['i.ytimg.com'],
+    // deviceSizes: [320, 500, 768, 1024, 1200, 1680, 2560],
+    // deviceSizes: [320, 500, 640, 750, 828, 1080, 1200, 1680, 1920, 2048, 2560, 3840],
+    // imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     path: '/_next/image',
     loader: 'default',
   },
