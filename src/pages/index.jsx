@@ -10,17 +10,19 @@ import YouTubeIcon from '@mui/icons-material/YouTube'
 import { MainLayout } from 'layouts/main'
 // local components
 import { BgMedia } from 'components/Hero/BgMedia'
-import { SocialSection } from 'components/Home/Sections/Social'
+// import { SocialSection } from 'components/Home/Sections/Social'
 import { VideoSection } from 'components/Home/Sections/Video'
 import { NewsSection } from 'components/Home/Sections/News'
+// local modules
+import { getVideoPageData } from 'lib/getVideoPageData'
 
-const Home = () => {
+const Home = ({ id, data, totalPages }) => {
   const video = '/videos/op.mov'
   const poster = '/images/logo.png'
 
   return (
     <MainLayout headerPosition="fixed">
-      <Box sx={{ height: '100vh', scroll: 'hidden' }}>
+      <Box id="hero" sx={{ height: '100vh', scroll: 'hidden' }}>
         <BgMedia video={video} poster={poster}>
           <Container
             sx={{
@@ -66,17 +68,25 @@ const Home = () => {
           </Container>
         </BgMedia>
       </Box>
-      <Box id="news">
+      <Box id="news" sx={{ mt: 12, mb: 18 }}>
         <NewsSection />
       </Box>
-      <Box id="video">
-        <VideoSection />
+      <Box id="video" sx={{ mt: 12, mb: 18 }}>
+        <VideoSection id={id} data={data} totalPages={totalPages} />
       </Box>
-      <Box id="social">
+      {/* <Box id="social" sx={{ mt: 12, mb: 18 }}>
         <SocialSection />
-      </Box>
+      </Box> */}
     </MainLayout>
   )
+}
+
+export const getStaticProps = async () => {
+  const data = await getVideoPageData()
+
+  return {
+    props: { id: 1, data: data[0], totalPages: data.length },
+  }
 }
 
 export default Home
