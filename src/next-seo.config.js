@@ -2,29 +2,29 @@ const BaseUrl = process.env.BASE_URL
 
 export const SEO = {
   titleTemplate: 'DUEL GROUP - %s',
-  defaultTitle: 'DUEL GROUP oficial',
+  defaultTitle: 'DUEL GROUP official',
   // outputs: Next SEO
-  description: 'DUEL GROUP oficial',
+  description: 'DUEL GROUP official',
   canonical: BaseUrl,
   additionalMetaTags: [
     {
       property: 'dc:creator',
-      content: 'DUEL GROUP oficial',
+      content: 'DUEL GROUP official',
     },
     {
       name: 'application-name',
-      content: 'DUEL GROUP oficial',
+      content: 'DUEL GROUP official',
     },
   ],
   openGraph: {
-    title: 'DUEL GROUP oficial',
-    site_name: 'DUEL GROUP oficial',
+    title: 'DUEL GROUP official',
+    site_name: 'DUEL GROUP official',
     type: 'website',
     url: BaseUrl,
     images: [
       {
         url: `${BaseUrl}/images/logo.png`,
-        alt: 'DUEL GROUP oficial',
+        alt: 'DUEL GROUP official',
         type: 'image/png',
       },
     ],
