@@ -1,19 +1,14 @@
 // mui components
-import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
-// local layout
+// local components
 import { MainLayout } from 'layouts/main'
+import { ComingSoon } from 'components/App/ComingSoon'
 
 export default function About() {
   const seo = { page: 'about', description: '' }
 
   return (
     <MainLayout seo={seo}>
-      <Box>
-        <Container>
-          <h1>about</h1>
-        </Container>
-      </Box>
+      <ComingSoon />
     </MainLayout>
   )
 }
