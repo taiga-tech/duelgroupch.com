@@ -38,3 +38,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# vscode
+.vscode
+
+# cache file
+notion-db-data-cache
+video-page-data-cache

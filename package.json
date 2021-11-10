@@ -1,6 +1,12 @@
 {
   "name": "duelgroupch.com",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Official Site of our YouTube channel",
+  "homepage": "https://www.duelgroupch.com/",
+  "author": {
+    "name": "taiga-tech",
+    "url": "https://github.com/taiga-tech/"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,25 +15,35 @@
     "lintfix": "next lint --fix"
   },
   "dependencies": {
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "@loadable/component": "^5.15.0",
+    "@notionhq/client": "^0.4.4",
+    "next": "^12.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "swr": "^1.0.1"
   },
   "devDependencies": {
-    "@emotion/react": "^11.4.1",
+    "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.0",
+    "@mui/lab": "^5.0.0-alpha.51",
     "@mui/material": "^5.0.0",
     "@mui/styles": "^5.0.0",
-    "babel-plugin-styled-components": "^1.13.2",
+    "@mui/system": "^5.0.6",
+    "@next/env": "^12.0.3",
+    "date-fns": "^2.25.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "next-pwa": "^5.4.0",
     "next-seo": "^4.28.1",
+    "nextjs-progressbar": "^0.0.13",
     "prettier": "^2.4.1",
-    "styled-components": "^5.3.1"
+    "prop-types": "^15.7.2",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "styled-components": "^5.3.1",
+    "styled-jsx": "^4.0.1"
   },
   "private": true
 }
