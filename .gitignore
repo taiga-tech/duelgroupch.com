@@ -41,3 +41,7 @@ yarn-error.log*
 
 # vscode
 .vscode
+
+# cache file
+notion-db-data-cache
+video-page-data-cache
