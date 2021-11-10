@@ -1,16 +1,14 @@
 // mui components
-import Container from '@mui/material/Container'
 // local components
 import { MainLayout } from 'layouts/main'
+import { ComingSoon } from 'components/App/ComingSoon'
 
 const Contact = () => {
   const seo = { page: 'contact' }
 
   return (
     <MainLayout seo={seo}>
-      <Container>
-        <h1>contact</h1>
-      </Container>
+      <ComingSoon />
     </MainLayout>
   )
 }
