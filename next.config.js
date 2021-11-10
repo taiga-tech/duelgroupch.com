@@ -22,6 +22,13 @@ module.exports = withPWA({
     loader: 'default',
   },
 
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    NEXT_PUBLIC_GA_ID: process.NEXT_PUBLIC_GA_ID,
+    NEXT_PUBLIC_NOTION_API_KEY: process.NEXT_PUBLIC_NOTION_API_KEY,
+    NEXT_PUBLIC_NOTION_DATABASE_ID: process.NEXT_PUBLIC_NOTION_DATABASE_ID,
+  },
+
   eslint: {
     dirs: ['src', 'next.config.js'],
   },
