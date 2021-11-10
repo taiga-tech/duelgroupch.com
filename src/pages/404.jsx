@@ -21,7 +21,7 @@ const Custom404 = () => {
   return (
     <MainLayout seo={seo}>
       <Container sx={{ height: 'calc(100vh - 90px)' }}>
-        <Dialog open maxWith="lg" fullWidth>
+        <Dialog open maxwith="lg" fullWidth>
           <Card
             sx={{
               color: 'white',
