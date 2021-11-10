@@ -12,13 +12,16 @@ import Typography from '@mui/material/Typography'
 // import IconButton from '@mui/material/IconButton'
 // import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Skeleton from '@mui/material/Skeleton'
+// local module
+import { shimmer, toBase64 } from 'lib/imageBlur'
 
 export const VideoCard = ({ item, loading }) => {
-  // const { loading = false } = loading
+  // const title = item.snippet.title
+  // const image = item.snippet.thumbnails.medium
 
   return (
     <MuiLink
-      href={`https://www.youtube.com/watch?v=${item.id.videoId}`}
+      href={`https://www.youtube.com/watch?v=${item ? item.id.videoId : ''}`}
       target="_blank"
       rel="noopener noreferrer"
       sx={{ display: 'block' }}
@@ -27,70 +30,62 @@ export const VideoCard = ({ item, loading }) => {
       <Card>
         <CardActionArea>
           {/* <CardHeader
-              avatar={
-                loading ? (
-                  <Skeleton
-                    animation="wave"
-                    variant="circular"
-                    width={40}
-                    height={40}
-                  />
-                ) : (
-                  <Avatar alt={item.snippet.channelTitle} src="/images/D-v2.png" />
-                )
-              }
-              // action={
-              //   loading ? null : (
-              //     <IconButton aria-label="settings">
-              //       <MoreVertIcon />
-              //     </IconButton>
-              //   )
-              // }
-              title={
-                loading ? (
-                  <Skeleton
-                    animation="wave"
-                    height={10}
-                    width="80%"
-                    style={{ marginBottom: 6 }}
-                  />
-                ) : (
-                  item.snippet.channelTitle
-                )
-              }
-              subheader={
-                loading ? (
-                  <Skeleton animation="wave" height={10} width="40%" />
-                ) : (
-                  item.snippet.publishTime
-                )
-              }
-            /> */}
+            avatar={
+              loading ? (
+                <Skeleton variant="circular" width={40} height={40} />
+              ) : (
+                <Avatar
+                  alt={item.snippet.channelTitle}
+                  src="/images/D-v2.png"
+                />
+              )
+            }
+            // action={
+            //   loading ? null : (
+            //     <IconButton aria-label="settings">
+            //       <MoreVertIcon />
+            //     </IconButton>
+            //   )
+            // }
+            title={
+              loading ? (
+                <Skeleton height={10} width="80%" style={{ marginBottom: 6 }} />
+              ) : (
+                item.snippet.channelTitle
+              )
+            }
+            subheader={
+              loading ? (
+                <Skeleton height={10} width="40%" />
+              ) : (
+                item.snippet.publishTime
+              )
+            }
+          /> */}
           {loading ? (
-            <Skeleton
-              sx={{ height: 180 }}
-              animation="wave"
-              variant="rectangular"
-            />
+            <Skeleton sx={{ height: 180 }} variant="rectangular" />
           ) : (
             <Image
               height={item.snippet.thumbnails.medium.height}
               width={item.snippet.thumbnails.medium.width}
               src={item.snippet.thumbnails.medium.url}
               alt={item.snippet.title}
+              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                shimmer(
+                  item.snippet.thumbnails.medium.width,
+                  item.snippet.thumbnails.medium.height
+                )
+              )}`}
+              placeholder="blur"
               layout="responsive"
-              // loading="lazy"
+              loading="lazy"
             />
           )}
           <CardContent>
             {loading ? (
               <>
-                <Skeleton
-                  animation="wave"
-                  height={10}
-                  style={{ marginBottom: 6 }}
-                />
-                <Skeleton animation="wave" height={10} width="80%" />
+                <Skeleton height={10} style={{ marginBottom: 6 }} />
+                <Skeleton height={10} width="80%" />
               </>
             ) : (
               <>
