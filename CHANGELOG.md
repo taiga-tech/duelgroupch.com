@@ -1,5 +1,11 @@
 # Change Logs
 
+## [v0.0.3] - 2021-11-11
+
+### Bug Fixes
+
+- Environment Variables
+
 ## [v0.0.2] - 2021-11-11
 
 ### Changed
