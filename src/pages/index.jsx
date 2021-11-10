@@ -1,91 +1,53 @@
 // mui components
-import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Grow from '@mui/material/Grow'
-import Button from '@mui/material/Button'
-// mui icons
-import YouTubeIcon from '@mui/icons-material/YouTube'
 // local layout
 import { MainLayout } from 'layouts/main'
 // local components
-import { BgMedia } from 'components/Hero/BgMedia'
-// import { SocialSection } from 'components/Home/Sections/Social'
-import { VideoSection } from 'components/Home/Sections/Video'
+import { HeroSection } from 'components/Home/Sections/Hero'
 import { NewsSection } from 'components/Home/Sections/News'
+import { VideoSection } from 'components/Home/Sections/Video'
 // local modules
 import { getVideoPageData } from 'lib/getVideoPageData'
+import { getNotionApi } from 'lib/getNotionApi'
 
-const Home = ({ id, data, totalPages }) => {
-  const video = '/videos/op.mov'
-  const poster = '/images/logo.png'
-
-  return (
-    <MainLayout headerPosition="fixed">
-      <Box id="hero" sx={{ height: '100vh', scroll: 'hidden' }}>
-        <BgMedia video={video} poster={poster}>
-          <Container
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: '100%',
-            }}
-          >
-            <Grow
-              in={true}
-              style={{ transformOrigin: '0 0 0' }}
-              {...{ timeout: 2000 }}
-            >
-              <Button
-                variant="text"
-                sx={{
-                  color: '#ff0100',
-                  '&:hover': { backgroundColor: 'rgba(255 , 1, 0, 0.04)' },
-                }}
-                href="https://www.youtube.com/channel/UCE010VqCfjLp7zckSBbFyfw/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <YouTubeIcon sx={{ fontSize: '50px' }} />
-                <Typography
-                  variant="h2"
-                  style={{
-                    fontFamily:
-                      'Unica One, Roboto, Helvetica, Arial, sans-serif',
-                    // fontSize: '80px',
-                    fontWeight: '300',
-                    letterSpacing: 'nomal',
-                    zIndex: '1',
-                    textShadow: `3px 3px #0e0e0e`,
-                    color: '#fff',
-                  }}
-                >
-                  DUELGROUP YOUTUBE CHANNEL
-                </Typography>
-              </Button>
-            </Grow>
-          </Container>
-        </BgMedia>
-      </Box>
-      <Box id="news" sx={{ mt: 12, mb: 18 }}>
-        <NewsSection />
-      </Box>
-      <Box id="video" sx={{ mt: 12, mb: 18 }}>
-        <VideoSection id={id} data={data} totalPages={totalPages} />
-      </Box>
-      {/* <Box id="social" sx={{ mt: 12, mb: 18 }}>
-        <SocialSection />
-      </Box> */}
-    </MainLayout>
-  )
-}
+const Home = ({ id, video, totalPages, news, newsLength }) => (
+  <MainLayout headerPosition="fixed">
+    <Box
+      component="section"
+      id="hero"
+      sx={{ height: '100vh', scroll: 'hidden' }}
+    >
+      <HeroSection />
+    </Box>
+    <Box component="section" id="news" sx={{ mt: 12, mb: 18 }}>
+      <NewsSection news={news} newsLength={newsLength} />
+    </Box>
+    <Box component="section" id="video" sx={{ mt: 12, mb: 18 }}>
+      <VideoSection id={id} data={video} totalPages={totalPages} />
+    </Box>
+    {/* <Box component="section"  id="social" sx={{ mt: 12, mb: 18 }}>
+      <SocialSection />
+    </Box> */}
+  </MainLayout>
+)
 
 export const getStaticProps = async () => {
-  const data = await getVideoPageData()
+  const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID
+  const video = await getVideoPageData()
+  const news = await getNotionApi(databaseId, {
+    sorts: [{ property: 'TimeStamp', direction: 'descending' }],
+    page_size: 5,
+  })
 
   return {
-    props: { id: 1, data: data[0], totalPages: data.length },
+    props: {
+      id: 1,
+      video: video[0],
+      totalPages: video.length,
+      news: news.results,
+      newsLength: news.results.length,
+      fallback: true,
+    },
   }
 }
 

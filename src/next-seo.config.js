@@ -4,7 +4,7 @@ export const SEO = {
   titleTemplate: 'DUEL GROUP - %s',
   defaultTitle: 'DUEL GROUP official',
   // outputs: Next SEO
-  description: 'DUEL GROUP official',
+  description: 'Official Site of our YouTube channel',
   canonical: BaseUrl,
   additionalMetaTags: [
     {

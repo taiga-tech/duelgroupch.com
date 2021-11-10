@@ -1,9 +1,11 @@
 const withPWA = require('next-pwa')
 
 module.exports = withPWA({
-  target: 'serverless',
-  reactStrictMode: true,
+  swcMinify: true,
   trailingSlash: true,
+  // experimental: {
+  //   concurrentFeatures: true,
+  // },
 
   pwa: {
     disable: process.env.NODE_ENV === 'development',
@@ -15,17 +17,12 @@ module.exports = withPWA({
     // deviceSizes: [320, 500, 768, 1024, 1200, 1680, 2560],
     // deviceSizes: [320, 500, 640, 750, 828, 1080, 1200, 1680, 1920, 2048, 2560, 3840],
     // imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/avif', 'image/webp'],
     path: '/_next/image',
     loader: 'default',
   },
 
-  env: {
-    BASE_URL: process.env.BASE_URL,
-    NEXT_PUBLIC_GA_ID: process.NEXT_PUBLIC_GA_ID,
-  },
-
   eslint: {
     dirs: ['src', 'next.config.js'],
-    ignoreDuringBuilds: true,
   },
 })
