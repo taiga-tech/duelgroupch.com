@@ -1,5 +1,6 @@
 // next components
 import Image from 'next/image'
+import logo from '/public/images/logo.png'
 
 const defaultSizes = {
   width: 100,
@@ -7,14 +8,13 @@ const defaultSizes = {
 }
 
 export const DGLogo = ({ width, height }) => {
-  const logo = '/images/logo.png'
   return (
     <Image
       src={logo}
       width={width ? width : defaultSizes.width}
       height={height ? height : defaultSizes.height}
       alt="DUELGROUP"
-      // layout="responsive"
+      loading="lazy"
     />
   )
 }
