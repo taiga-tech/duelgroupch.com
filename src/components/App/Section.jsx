@@ -8,8 +8,11 @@ export const Section = ({ children }) => {
       <Container
         sx={{
           minHeight: 500,
-          height: 'calc(100vh - 90px)',
-          maxHeight: { xs: 500, sm: 700, xl: 1000 },
+          height: {
+            xs: 'calc(100vh - (90px + 470px))',
+            md: 'calc(100vh - (90px + 362px))',
+          }, // footer height: { xs:470, ?:362 }
+          maxHeight: { xs: 700, sm: 700, xl: 1000 },
           transition: '0.3s',
         }}
       >
