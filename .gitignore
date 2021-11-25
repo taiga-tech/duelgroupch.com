@@ -46,5 +46,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 # cache file
-notion-db-data-cache
-video-page-data-cache
+cache/*
