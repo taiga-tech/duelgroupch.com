@@ -15,6 +15,7 @@ export const SEO = {
       name: 'application-name',
       content: 'DUEL GROUP official',
     },
+    { name: 'theme-color', content: '#13151e' },
   ],
   openGraph: {
     title: 'DUEL GROUP official',
