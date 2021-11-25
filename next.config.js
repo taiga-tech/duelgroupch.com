@@ -1,8 +1,10 @@
+/** @type {import('next').NextConfig} */
 const withPWA = require('next-pwa')
 
 module.exports = withPWA({
   swcMinify: true,
   trailingSlash: true,
+  reactStrictMode: true,
   // experimental: {
   //   concurrentFeatures: true,
   // },
@@ -22,7 +24,5 @@ module.exports = withPWA({
     loader: 'default',
   },
 
-  eslint: {
-    dirs: ['src', 'next.config.js'],
-  },
+  eslint: { dirs: ['src'] },
 })
