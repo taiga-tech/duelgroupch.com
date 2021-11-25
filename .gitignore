@@ -40,7 +40,10 @@ yarn-error.log*
 .vercel
 
 # vscode
-.vscode
+!.vscode
+
+# typescript
+*.tsbuildinfo
 
 # cache file
 notion-db-data-cache
