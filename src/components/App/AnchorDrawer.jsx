@@ -12,7 +12,8 @@ import MenuIcon from '@mui/icons-material/Menu'
 // local components
 import { ListItemLink } from 'components/App/ListItemLink'
 // local constants
-import { ROUTES } from 'constants/route'
+import { ROUTE } from 'constants/route'
+import { ignoreASideLink } from 'lib/ignoreASideLink'
 
 export const AnchorDrawer = ({ position }) => {
   const [state, setState] = useState({
@@ -42,7 +43,7 @@ export const AnchorDrawer = ({ position }) => {
         onKeyDown={toggleDrawer(anchor, false)}
       >
         <List>
-          {ROUTES.map((Link, index) => (
+          {ignoreASideLink(ROUTE, 'settings').map((Link, index) => (
             <ListItemLink href={Link.to} title={Link.title} key={Link.title}>
               <ListItemIcon>{Link.icon}</ListItemIcon>
               <ListItemText primary={Link.title} />
