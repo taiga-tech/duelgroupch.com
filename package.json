@@ -1,18 +1,17 @@
 {
   "name": "duelgroupch.com",
-  "version": "0.0.3",
   "description": "Official Site of our YouTube channel",
+  "version": "0.0.4",
+  "author": "taiga-tech (https://github.com/taiga-tech/)",
   "homepage": "https://www.duelgroupch.com/",
-  "author": {
-    "name": "taiga-tech",
-    "url": "https://github.com/taiga-tech/"
-  },
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lintfix": "next lint --fix"
+    "lintfix": "next lint --fix",
+    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore"
   },
   "dependencies": {
     "@loadable/component": "^5.15.0",
@@ -31,19 +30,25 @@
     "@mui/styles": "^5.0.0",
     "@mui/system": "^5.0.6",
     "@next/env": "^12.0.3",
+    "@types/gtag.js": "^0.0.8",
+    "@types/node": "^16.11.8",
+    "@types/react": "^17.0.35",
     "date-fns": "^2.25.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "konva": "^8.3.0",
     "next-pwa": "^5.4.0",
     "next-seo": "^4.28.1",
     "nextjs-progressbar": "^0.0.13",
     "prettier": "^2.4.1",
     "prop-types": "^15.7.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-konva": "^17.0.2-5",
     "styled-components": "^5.3.1",
-    "styled-jsx": "^4.0.1"
-  },
-  "private": true
+    "styled-jsx": "^4.0.1",
+    "typescript": "4.4.4",
+    "xml2js": "^0.4.23"
+  }
 }

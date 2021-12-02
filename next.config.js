@@ -1,8 +1,10 @@
+/** @type {import('next').NextConfig} */
 const withPWA = require('next-pwa')
 
 module.exports = withPWA({
   swcMinify: true,
   trailingSlash: true,
+  reactStrictMode: true,
   // experimental: {
   //   concurrentFeatures: true,
   // },

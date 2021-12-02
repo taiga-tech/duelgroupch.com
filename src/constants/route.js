@@ -34,5 +34,3 @@ export const ROUTE = {
     },
   },
 }
-
-export const ROUTES = [ROUTE.home, ROUTE.about, ROUTE.contact, ROUTE.events]

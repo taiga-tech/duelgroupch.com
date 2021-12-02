@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography'
 import loadable from '@loadable/component'
 // local components
 import { NewsItem } from 'components/Home/NewsItem'
+// import { ErrorAlert } from 'components/App/ErrorAlert'
 const TwitterWidgets = loadable(() => import('components/Home/Widgets/Twitter'))
 
 export const NewsSection = ({ news, newsLength }) => {
@@ -39,9 +40,13 @@ export const NewsSection = ({ news, newsLength }) => {
                 News
               </Typography>
 
+              {/* {news.status.code === 500 && (
+                <ErrorAlert error={news.status.error} />
+              )} */}
+
               <Grid container spacing={2} sx={{ pl: 2 }}>
-                {loading
-                  ? Array.from(Array(newsLength)).map((_, i) => (
+                {loading // || news.status.code === 500
+                  ? Array.from(Array(5)).map((_, i) => (
                       <React.Fragment key={i}>
                         <Grid item xs={3} sm={2}>
                           <Typography variant="body2">
@@ -58,7 +63,7 @@ export const NewsSection = ({ news, newsLength }) => {
                         </Grid>
                       </React.Fragment>
                     ))
-                  : news.map((item, index) => (
+                  : news.results.map((item, index) => (
                       <NewsItem
                         item={item.properties.Published.checkbox && item}
                         key={index}

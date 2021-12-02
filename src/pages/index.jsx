@@ -10,7 +10,7 @@ import { VideoSection } from 'components/Home/Sections/Video'
 import { getVideoPageData } from 'lib/getVideoPageData'
 import { getNotionApi } from 'lib/getNotionApi'
 
-const Home = ({ id, video, totalPages, news, newsLength }) => (
+const Home = ({ video, news }) => (
   <MainLayout headerPosition="fixed">
     <Box
       component="section"
@@ -20,14 +20,11 @@ const Home = ({ id, video, totalPages, news, newsLength }) => (
       <HeroSection />
     </Box>
     <Box component="section" id="news" sx={{ mt: 12, mb: 18 }}>
-      <NewsSection news={news} newsLength={newsLength} />
+      <NewsSection news={news} />
     </Box>
     <Box component="section" id="video" sx={{ mt: 12, mb: 18 }}>
-      <VideoSection id={id} data={video} totalPages={totalPages} />
+      <VideoSection video={video} />
     </Box>
-    {/* <Box component="section"  id="social" sx={{ mt: 12, mb: 18 }}>
-      <SocialSection />
-    </Box> */}
   </MainLayout>
 )
 
@@ -41,13 +38,10 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      id: 1,
       video: video[0],
-      totalPages: video.length,
-      news: news.results,
-      newsLength: news.results.length,
-      fallback: true,
+      news: news,
     },
+    revalidate: 10,
   }
 }
 

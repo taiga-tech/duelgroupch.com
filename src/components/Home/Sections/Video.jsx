@@ -7,8 +7,9 @@ import Grid from '@mui/material/Grid'
 // local components
 import { VideoCardWrapper } from 'components/Home/VideoCardWrapper'
 import { VideoCard } from 'components/Home/VideoCard'
+import { ErrorAlert } from 'components/App/ErrorAlert'
 
-export const VideoSection = ({ id, data, totalPages }) => {
+export const VideoSection = ({ video }) => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000)
@@ -16,15 +17,16 @@ export const VideoSection = ({ id, data, totalPages }) => {
 
   return (
     <Container>
+      {video.error && <ErrorAlert error={video.error} />}
       <Box>
         <VideoCardWrapper>
-          {loading
+          {loading || video.error
             ? Array.from(Array(16)).map((_, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                  <VideoCard loading={loading} />
+                  <VideoCard loading={loading} error={video.error} />
                 </Grid>
               ))
-            : data.items.map((item, index) => (
+            : video.items.map((item, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                   <VideoCard item={item} loading={!item} />
                 </Grid>
