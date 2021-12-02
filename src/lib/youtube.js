@@ -1,11 +1,9 @@
 import { constructUrl } from 'lib/constructUrl'
 
 const baseUrl = 'https://youtube.googleapis.com/youtube/v3/search'
-
 const baseParams = {
   part: 'snippet',
   channelId: 'UCE010VqCfjLp7zckSBbFyfw',
-  // channelId: 'UCXTpFs_3PqI41qX2d9tL2Rw',
   maxResults: 16,
   order: 'date',
   type: 'video',
@@ -20,7 +18,9 @@ export const fetchVideoInfo = async (params) => {
         'Content-Type': 'application/json',
       },
     }
-  )
+  ).catch((err) => {
+    throw new Error(err)
+  })
 
   return await result.json()
 }
