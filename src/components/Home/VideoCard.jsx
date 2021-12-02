@@ -15,13 +15,17 @@ import Skeleton from '@mui/material/Skeleton'
 // local module
 import { shimmer, toBase64 } from 'lib/imageBlur'
 
-export const VideoCard = ({ item, loading }) => {
+export const VideoCard = ({ item, loading, error }) => {
   // const title = item.snippet.title
   // const image = item.snippet.thumbnails.medium
 
+  const channelurl = 'https://www.youtube.com/channel/UCE010VqCfjLp7zckSBbFyfw/'
+
   return (
     <MuiLink
-      href={`https://www.youtube.com/watch?v=${item ? item.id.videoId : ''}`}
+      href={
+        item ? `https://www.youtube.com/watch?v=${item.id.videoId}` : channelurl
+      }
       target="_blank"
       rel="noopener noreferrer"
       sx={{ display: 'block' }}
@@ -62,7 +66,7 @@ export const VideoCard = ({ item, loading }) => {
               )
             }
           /> */}
-          {loading ? (
+          {loading || error ? (
             <Skeleton sx={{ height: 180 }} variant="rectangular" />
           ) : (
             <Image
@@ -82,7 +86,7 @@ export const VideoCard = ({ item, loading }) => {
             />
           )}
           <CardContent>
-            {loading ? (
+            {loading || error ? (
               <>
                 <Skeleton height={10} style={{ marginBottom: 6 }} />
                 <Skeleton height={10} width="80%" />
