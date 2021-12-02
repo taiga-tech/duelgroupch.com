@@ -4,9 +4,8 @@
 
 <img alt="siteimage" src="https://user-images.githubusercontent.com/67569270/140637534-93e5cf14-8553-4e7e-81a7-dcc09953db8c.png" />
 
-- Production:  https://duelgroupch.com/
+- Production: https://duelgroupch.com/
 - Development: https://dev.duelgroupch.com/
-
 
 ## Description
 
@@ -15,7 +14,6 @@ The News list uses the Notion API (Bata) to Fetch the data, and it can be update
 In addition, the Video section uses the YouTube Data API to display the latest information.
 
 In the future, it is currently under development with the goal of configuring all pages with the Notion API.
-
 
 ## Dependency
 
@@ -27,7 +25,6 @@ In the future, it is currently under development with the goal of configuring al
 | Next.js | 12.0.3           |
 | React   | 17.0.2           |
 | MUI     | 5.0.0            |
-
 
 ## Features
 

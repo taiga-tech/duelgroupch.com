@@ -8,9 +8,14 @@ const handler = async (req, res) => {
       sorts: [{ property: 'TimeStamp', direction: 'descending' }],
       page_size: 5,
     })
-    res.status(200).json({ status: 200, data: result })
+    res
+      .status(200)
+      .json({ status: { code: 200, message: 'success' }, data: result })
   } catch (err) {
-    res.status(500).send({ status: 500, error: 'failed to fetch data' })
+    res.status(500).send({
+      status: { code: 500, message: 'failed to fetch data' },
+      error: err,
+    })
   }
 }
 

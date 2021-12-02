@@ -4,18 +4,16 @@
 
 <img alt="pagetop" src="https://user-images.githubusercontent.com/67569270/140637534-93e5cf14-8553-4e7e-81a7-dcc09953db8c.png" />
 
-- Production:  https://www.duelgroupch.com/
+- Production: https://www.duelgroupch.com/
 - Development: https://dev.duelgroupch.com/
-
 
 ## Description
 
-このサイトはパフォーマンスを求めてNextjsで構築しています。
-News一覧はNotionAPI（Bata）でデータをFetchしており、NotionのDBを変更することで動的に更新することが可能です。
-また、VideoセクションではYouTube Data APIを使用し最新情報を表示しています。
+このサイトはパフォーマンスを求めて Nextjs で構築しています。
+News 一覧は NotionAPI（Bata）でデータを Fetch しており、Notion の DB を変更することで動的に更新することが可能です。
+また、Video セクションでは YouTube Data API を使用し最新情報を表示しています。
 
-将来的には、NotionAPIですべてのページを構成することを目標に現在開発中です。
-
+将来的には、NotionAPI ですべてのページを構成することを目標に現在開発中です。
 
 ## Dependency
 
@@ -28,7 +26,6 @@ News一覧はNotionAPI（Bata）でデータをFetchしており、NotionのDB�
 | React   | 17.0.2           |
 | MUI     | 5.0.0            |
 | Hosting | Vercel           |
-
 
 ## Features
 
