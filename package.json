@@ -11,35 +11,35 @@
     "start": "next start",
     "lint": "next lint",
     "lintfix": "next lint --fix",
-    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore"
+    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .prettierignore"
   },
   "dependencies": {
     "@loadable/component": "^5.15.0",
     "@notionhq/client": "^0.4.4",
-    "next": "^12.0.3",
+    "next": "12.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "swr": "^1.0.1"
+    "swr": "^1.1.0"
   },
   "devDependencies": {
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "@mui/icons-material": "^5.0.0",
-    "@mui/lab": "^5.0.0-alpha.51",
-    "@mui/material": "^5.0.0",
-    "@mui/styles": "^5.0.0",
-    "@mui/system": "^5.0.6",
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/lab": "^5.0.0-alpha.58",
+    "@mui/material": "^5.2.2",
+    "@mui/styles": "^5.2.2",
+    "@mui/system": "^5.2.2",
     "@next/env": "^12.0.3",
     "@types/gtag.js": "^0.0.8",
-    "@types/node": "^16.11.8",
-    "@types/react": "^17.0.35",
+    "@types/node": "^16.11.11",
+    "@types/react": "^17.0.37",
     "date-fns": "^2.25.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "konva": "^8.3.0",
-    "next-pwa": "^5.4.0",
+    "next-pwa": "^5.4.4",
     "next-seo": "^4.28.1",
     "nextjs-progressbar": "^0.0.13",
     "prettier": "^2.4.1",
@@ -50,5 +50,6 @@
     "styled-jsx": "^4.0.1",
     "typescript": "4.4.4",
     "xml2js": "^0.4.23"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
