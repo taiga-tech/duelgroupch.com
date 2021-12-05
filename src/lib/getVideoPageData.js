@@ -30,7 +30,9 @@ export const getVideoPageData = async () => {
   if (useCache) {
     const [error] = pageData
     if (!error) {
-      await writeFile(cacheFile, JSON.stringify(pageData), 'utf8').catch(() => {})
+      await writeFile(cacheFile, JSON.stringify(pageData), 'utf8').catch(
+        () => {}
+      )
     }
   }
 
