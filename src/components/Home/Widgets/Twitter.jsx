@@ -1,12 +1,14 @@
 // react
-import { useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 // next components
 import Script from 'next/script'
 // mui components
 import Box from '@mui/material/Box'
 import MuiLink from '@mui/material/Link'
+import { useTheme } from '@mui/styles'
 
 const TwitterWidgets = () => {
+  const theme = useTheme()
   useEffect(() => {
     const twitterSrc = 'https://platform.twitter.com/widgets.js'
 
@@ -26,7 +28,7 @@ const TwitterWidgets = () => {
         className="twitter-timeline"
         data-width="360"
         data-height="640"
-        data-theme="dark"
+        data-theme={theme.palette.mode}
         href="https://twitter.com/DuelGroup?ref_src=twsrc%5Etfw"
       >
         Tweets by DuelGroup
