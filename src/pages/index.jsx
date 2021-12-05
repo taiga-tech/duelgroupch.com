@@ -19,10 +19,14 @@ const Home = ({ video, news }) => (
     >
       <HeroSection />
     </Box>
-    <Box component="section" id="news" sx={{ mt: 12, mb: 18 }}>
+    <Box
+      component="section"
+      id="news"
+      sx={{ pt: 12, pb: 18, bgcolor: 'background.secondary' }}
+    >
       <NewsSection news={news} />
     </Box>
-    <Box component="section" id="video" sx={{ mt: 12, mb: 18 }}>
+    <Box component="section" id="video" sx={{ pt: 12, pb: 18 }}>
       <VideoSection video={video} />
     </Box>
   </MainLayout>
