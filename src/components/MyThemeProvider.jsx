@@ -2,7 +2,7 @@
 import { useEffect, useState, createContext } from 'react'
 // mui modules
 import { CssBaseline } from '@mui/material'
-import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 // local modules
 import { getDesignTokens } from 'lib/getDesignTokens'
@@ -50,25 +50,6 @@ export const MyThemeProvider = ({ children }) => {
   }, [prefersDarkMode, lsTheme])
 
   const theme = createTheme(getDesignTokens(darkMode))
-  // const theme = createTheme({
-  //   components: {
-  //     MuiAppBar: {
-  //       styleOverrides: {
-  //         root: {
-  //           color: mode ? '#fff' : '#000',
-  //           backgroundImage: 'none',
-  //           boxShadow: 'none',
-  //         },
-  //       },
-  //     },
-  //   },
-  //   palette: {
-  //     mode: mode ? 'dark' : 'light',
-  //     background: {
-  //       secondary: mode ? '#201f1f' : '#fff',
-  //     },
-  //   },
-  // })
 
   return (
     <ThemeContext.Provider
