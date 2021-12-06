@@ -1,8 +1,14 @@
+[JA](./README.ja.md) / [EN](README.md)
+
 # DUELGROUP official Site
 
 **Official Site of our YouTube channel**
 
-<img alt="pagetop" src="https://user-images.githubusercontent.com/67569270/140637534-93e5cf14-8553-4e7e-81a7-dcc09953db8c.png" />
+<a href="https://www.youtube.com/channel/UCE010VqCfjLp7zckSBbFyfw/" target="_blank" rel="noopener noreferrer">
+  <img alt="pagetop" src="https://user-images.githubusercontent.com/67569270/140637534-93e5cf14-8553-4e7e-81a7-dcc09953db8c.png" />
+</a>
+
+## Environments
 
 - Production: https://www.duelgroupch.com/
 - Development: https://dev.duelgroupch.com/
@@ -20,11 +26,11 @@ News 一覧は NotionAPI（Bata）でデータを Fetch しており、Notion �
 |         | Version          |
 | ------- | ---------------- |
 | Mac OS  | Catalina 10.15.7 |
-| Node    | v15.4.0          |
-| Yarn    | 3.0.2            |
-| Next.js | 12.0.3           |
-| React   | 17.0.2           |
-| MUI     | 5.0.0            |
+| Node    | v16.13.0         |
+| Yarn    | v3.1.1           |
+| Next.js | v12.0.3          |
+| React   | v17.0.2          |
+| MUI     | v5.2.2           |
 | Hosting | Vercel           |
 
 ## Features
@@ -32,4 +38,4 @@ News 一覧は NotionAPI（Bata）でデータを Fetch しており、Notion �
 - Image automatic generation - https://cloudinary.com/
 - Improve the performance of Twitter embed
 - Instagram embed
-- Fetch Data cache
+- Optimize Fetch Data Cache

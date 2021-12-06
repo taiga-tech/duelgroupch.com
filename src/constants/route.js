@@ -21,6 +21,11 @@ export const ROUTE = {
   contact: { title: 'Contact', to: '/contact', icon: <EmailIcon /> },
   settings: { title: 'Settings', to: '/settings', icon: <SettingsIcon /> },
   events: { title: 'Events', to: '/events', icon: <CalendarTodayIcon /> },
+  profile: {
+    title: 'Profile',
+    to: '/products/profile',
+    icon: <FingerprintIcon />,
+  },
   legal: {
     terms: {
       title: 'Terms',

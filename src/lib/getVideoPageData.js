@@ -28,7 +28,12 @@ export const getVideoPageData = async () => {
   }
 
   if (useCache) {
-    await writeFile(cacheFile, JSON.stringify(pageData), 'utf8').catch(() => {})
+    const [error] = pageData
+    if (!error) {
+      await writeFile(cacheFile, JSON.stringify(pageData), 'utf8').catch(
+        () => {}
+      )
+    }
   }
 
   return new Promise((resolve) => {

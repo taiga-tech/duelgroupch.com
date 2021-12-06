@@ -1,5 +1,21 @@
 # Change Logs
 
+## [v0.0.4] - 2021-12-02
+
+### Changed
+
+- Change from JavaScript to TypeScript
+- Correspond to ISR with data that seems to be changed
+
+### Fixed
+
+- YouTubeDataApi Fetch Error Handling
+
+### Features
+
+- It does not mean that all changed to Typescript, Scheduled to change gradually.
+- i18n
+
 ## [v0.0.3] - 2021-11-11
 
 ### Bug Fixes

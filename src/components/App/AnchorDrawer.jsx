@@ -43,7 +43,7 @@ export const AnchorDrawer = ({ position }) => {
         onKeyDown={toggleDrawer(anchor, false)}
       >
         <List>
-          {ignoreASideLink(ROUTE, 'settings').map((Link, index) => (
+          {ignoreASideLink(ROUTE, 'settings|profile').map((Link) => (
             <ListItemLink href={Link.to} title={Link.title} key={Link.title}>
               <ListItemIcon>{Link.icon}</ListItemIcon>
               <ListItemText primary={Link.title} />

@@ -20,9 +20,7 @@ export const LinkList = () => {
         <Typography fontWeight="bold" variant="body2">
           Products
         </Typography>
-        <Link href={ROUTE.home.to}>Videos</Link>
-        <Link href={ROUTE.events.to}>Events</Link>
-        <Link href={ROUTE.home.to}>Blog</Link>
+        <Link href={ROUTE.profile.to}>Profile Generater</Link>
       </Box>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Typography fontWeight="bold" variant="body2">
