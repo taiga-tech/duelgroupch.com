@@ -1,26 +1,20 @@
-// react modules
+// react
 import { useEffect } from 'react'
-// next components
-import Script from 'next/script'
-// seo
-import { DefaultSeo } from 'next-seo'
-import { SEO } from 'next-seo.config'
-// next modules
+// next
 import { useRouter } from 'next/router'
-// local components
-import { MyThemeProvider } from 'components/MyThemeProvider'
-// local modules
+import Script from 'next/script'
+// local
 import * as gtag from 'lib/gtag'
-// other modules
-import NextNprogress from 'nextjs-progressbar'
 
-const CustomApp = ({ Component, pageProps }) => {
-  const isProd = process.env.NODE_ENV === 'production'
+const Gtag = (): JSX.Element => {
+  const isProd: boolean = process.env.NODE_ENV === 'production'
+  const GA_TRACKING_ID: string | undefined = gtag.GA_TRACKING_ID
   const router = useRouter()
+
   useEffect(() => {
     if (!gtag.GA_TRACKING_ID) return
 
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       gtag.pageview(url)
     }
     router.events.on('routeChangeComplete', handleRouteChange)
@@ -29,20 +23,13 @@ const CustomApp = ({ Component, pageProps }) => {
     }
   }, [router.events])
 
-  useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side')
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles)
-    }
-  }, [])
-
   return (
-    <MyThemeProvider>
+    <>
       {isProd && (
         <>
           <Script
             strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
           <Script
             id="gtag-init"
@@ -52,7 +39,7 @@ const CustomApp = ({ Component, pageProps }) => {
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
-                        gtag('config', '${gtag.GA_TRACKING_ID}', {
+                        gtag('config', '${GA_TRACKING_ID}', {
                           page_path: window.location.pathname,
                         });
                       `,
@@ -60,11 +47,8 @@ const CustomApp = ({ Component, pageProps }) => {
           />
         </>
       )}
-      <DefaultSeo {...SEO} />
-      <NextNprogress color="rgba(255,255,255,0.5)" height={2} />
-      <Component {...pageProps} />
-    </MyThemeProvider>
+    </>
   )
 }
 
-export default CustomApp
+export default Gtag

@@ -196,9 +196,9 @@ const PrivacyPolicy = () => {
           https://taiga-tech.tk/
         </MuiLink> */}
         <br />
-        Eメールアドレス：groupduel@gmail.com
+        Eメールアドレス: groupduel@gmail.com
         <br />
-        Twitte：
+        Twitter:{' '}
         <MuiLink
           href="https://twitter.com/DuelGroup/"
           target="_blank"

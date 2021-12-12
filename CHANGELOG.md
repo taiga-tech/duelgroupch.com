@@ -11,11 +11,6 @@
 
 - YouTubeDataApi Fetch Error Handling
 
-### Features
-
-- It does not mean that all changed to Typescript, Scheduled to change gradually.
-- i18n
-
 ## [v0.0.3] - 2021-11-11
 
 ### Bug Fixes
@@ -38,4 +33,9 @@
 
 ## [v0.0.1] - 2021-10-01
 
-- bata release
+- initial release
+
+## Features
+
+- It does not mean that all changed to Typescript, Scheduled to change gradually.
+- i18n
