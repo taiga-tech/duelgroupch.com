@@ -1,3 +1,5 @@
+// // types
+// import type { RouteType } from 'types/route'
 // mui icons
 import HomeIcon from '@mui/icons-material/Home'
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined'
@@ -13,14 +15,40 @@ export const ROUTE = {
     title: 'Home',
     to: '/',
     icon: <HomeIcon />,
-    news: { title: 'News', to: '/#news' },
-    video: { title: 'Video', to: '/#video', icon: <YouTubeIcon /> },
-    social: { title: 'Social', to: '/#social' },
+    news: {
+      title: 'News',
+      to: '/#news',
+    },
+    video: {
+      title: 'Video',
+      to: '/#video',
+      icon: <YouTubeIcon />,
+    },
+    social: {
+      title: 'Social',
+      to: '/#social',
+    },
   },
-  about: { title: 'About', to: '/about', icon: <AnnouncementOutlinedIcon /> },
-  contact: { title: 'Contact', to: '/contact', icon: <EmailIcon /> },
-  settings: { title: 'Settings', to: '/settings', icon: <SettingsIcon /> },
-  events: { title: 'Events', to: '/events', icon: <CalendarTodayIcon /> },
+  about: {
+    title: 'About',
+    to: '/about',
+    icon: <AnnouncementOutlinedIcon />,
+  },
+  contact: {
+    title: 'Contact',
+    to: '/contact',
+    icon: <EmailIcon />,
+  },
+  settings: {
+    title: 'Settings',
+    to: '/settings',
+    icon: <SettingsIcon />,
+  },
+  events: {
+    title: 'Events',
+    to: '/events',
+    icon: <CalendarTodayIcon />,
+  },
   profile: {
     title: 'Profile',
     to: '/products/profile',
