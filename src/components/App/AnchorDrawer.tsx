@@ -1,3 +1,5 @@
+// types
+import type { RouteObj } from 'types/route'
 // react modules
 import { useState } from 'react'
 // mui components
@@ -15,7 +17,13 @@ import { ListItemLink } from 'components/App/ListItemLink'
 import { ROUTE } from 'constants/route'
 import { ignoreASideLink } from 'lib/ignoreASideLink'
 
-export const AnchorDrawer = ({ position }) => {
+type Anchor = 'top' | 'left' | 'bottom' | 'right'
+
+export const AnchorDrawer = ({
+  position,
+}: {
+  position: Anchor
+}): JSX.Element => {
   const [state, setState] = useState({
     top: false,
     left: false,
@@ -23,18 +31,21 @@ export const AnchorDrawer = ({ position }) => {
     right: false,
   })
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return
+  const toggleDrawer =
+    (anchor: Anchor, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return
+      }
+
+      setState({ ...state, [anchor]: open })
     }
 
-    setState({ ...state, [anchor]: open })
-  }
-
-  const list = (anchor) => {
+  const list = (anchor: Anchor) => {
     return (
       <Box
         sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -43,7 +54,7 @@ export const AnchorDrawer = ({ position }) => {
         onKeyDown={toggleDrawer(anchor, false)}
       >
         <List>
-          {ignoreASideLink(ROUTE, 'settings|profile').map((Link) => (
+          {ignoreASideLink(ROUTE, 'settings|profile').map((Link: RouteObj) => (
             <ListItemLink href={Link.to} title={Link.title} key={Link.title}>
               <ListItemIcon>{Link.icon}</ListItemIcon>
               <ListItemText primary={Link.title} />

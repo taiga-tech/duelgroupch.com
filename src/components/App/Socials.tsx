@@ -3,11 +3,12 @@ import Stack from '@mui/material/Stack'
 import IconButton from '@mui/material/IconButton'
 // local constants
 import { SOCIALS } from 'constants/social'
+import type { SocialObj } from 'types/socials'
 
-export const Socials = () => {
+export const Socials = (): JSX.Element => {
   return (
     <Stack spacing={2} direction="row">
-      {SOCIALS.map((sns, i) => (
+      {SOCIALS.map((sns: SocialObj, i: number) => (
         <IconButton
           sx={sns.sx}
           target="_blank"
