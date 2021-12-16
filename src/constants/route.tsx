@@ -1,5 +1,5 @@
 // // types
-// import type { RouteType } from 'types/route'
+import type { RouteType } from 'types/route'
 // mui icons
 import HomeIcon from '@mui/icons-material/Home'
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined'
@@ -10,7 +10,7 @@ import FingerprintIcon from '@mui/icons-material/Fingerprint'
 import AssignmentSharpIcon from '@mui/icons-material/AssignmentSharp'
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
 
-export const ROUTE = {
+export const ROUTE: RouteType = {
   home: {
     title: 'Home',
     to: '/',

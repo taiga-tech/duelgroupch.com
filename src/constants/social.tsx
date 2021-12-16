@@ -1,17 +1,20 @@
+// types
+import type { SocialObj, SocialsType } from 'types/socials'
+// mui icons
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import MusicNoteSharpIcon from '@mui/icons-material/MusicNoteSharp'
 import GitHubIcon from '@mui/icons-material/GitHub'
 
-export const SOCIAL = {
+export const SOCIAL: SocialsType = {
   youtube: {
     title: 'YouTube',
     href: 'https://www.youtube.com/channel/UCE010VqCfjLp7zckSBbFyfw/',
     icon: <YouTubeIcon />,
     sx: {
       color: '#ff0100',
-      '&:hover': { backgroundColor: 'rgba(255 , 1, 0, 0.04)' },
+      '&:hover': { backgroundColor: 'rgba(255, 1, 0, 0.04)' },
     },
   },
   twitter: {
@@ -20,7 +23,7 @@ export const SOCIAL = {
     icon: <TwitterIcon />,
     sx: {
       color: '#1d9bef',
-      '&:hover': { backgroundColor: 'rgba(29 , 155, 239, 0.04)' },
+      '&:hover': { backgroundColor: 'rgba(29, 155, 239, 0.04)' },
     },
   },
   instagram: {
@@ -29,7 +32,7 @@ export const SOCIAL = {
     icon: <InstagramIcon />,
     sx: {
       color: '#CF2E92',
-      '&:hover': { backgroundColor: 'rgba(207 , 45, 146, 0.04)' },
+      '&:hover': { backgroundColor: 'rgba(207, 45, 146, 0.04)' },
     },
   },
   tiktok: {
@@ -44,12 +47,12 @@ export const SOCIAL = {
     icon: <GitHubIcon />,
     sx: {
       color: 'purple',
-      '&:hover': { backgroundColor: 'rgba(128,0,128,0.04)' },
+      '&:hover': { backgroundColor: 'rgba(128, 0, 128, 0.04)' },
     },
   },
 }
 
-export const SOCIALS = [
+export const SOCIALS: SocialObj[] = [
   SOCIAL.youtube,
   SOCIAL.twitter,
   SOCIAL.instagram,
