@@ -5,7 +5,7 @@ import { UrlImage } from 'components/Canvas/UrlImage'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import { downloadURI } from 'lib/downloadURI'
-import { Code } from 'components/App/Dynamic/Code'
+import components from 'components/App/Dynamic'
 
 const config = {
   default: {
@@ -100,7 +100,7 @@ export const ProfileCanv = ({
           </Stage>
         </Box>
         <Box>
-          <Code>{parser()}</Code>
+          <components.Code language="">{parser()}</components.Code>
         </Box>
       </Box>
     </Box>
