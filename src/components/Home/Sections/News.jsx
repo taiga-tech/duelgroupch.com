@@ -13,7 +13,7 @@ import { NewsItem } from 'components/Home/NewsItem'
 // import { ErrorAlert } from 'components/App/ErrorAlert'
 const TwitterWidgets = loadable(() => import('components/Home/Widgets/Twitter'))
 
-export const NewsSection = ({ news, newsLength }) => {
+export const NewsSection = ({ news }) => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000)
