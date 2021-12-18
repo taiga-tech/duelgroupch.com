@@ -46,7 +46,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 # cache file
-cache/*
+!cache/*
 
 
 package.json
