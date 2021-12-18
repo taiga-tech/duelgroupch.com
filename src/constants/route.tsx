@@ -1,5 +1,5 @@
 // // types
-import type { RouteType } from 'types/route'
+import type { RouteType } from 'constants/types/route'
 // mui icons
 import HomeIcon from '@mui/icons-material/Home'
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined'

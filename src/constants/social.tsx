@@ -1,5 +1,5 @@
 // types
-import type { SocialObj, SocialsType } from 'types/socials'
+import type { SocialObj, SocialsType } from 'constants/types/socials'
 // mui icons
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import TwitterIcon from '@mui/icons-material/Twitter'
