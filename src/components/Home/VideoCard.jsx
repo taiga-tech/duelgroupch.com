@@ -96,7 +96,13 @@ export const VideoCard = ({ item, loading, error }) => {
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  component="p"
+                  component="span"
+                  sx={{
+                    display: '-webkit-box',
+                    overflow: 'hidden',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                  }}
                 >
                   {item.snippet.title}
                 </Typography>
