@@ -1,9 +1,10 @@
+// types
+import type { SocialObj } from 'constants/types/socials'
 // mui components
 import Stack from '@mui/material/Stack'
 import IconButton from '@mui/material/IconButton'
 // local constants
 import { SOCIALS } from 'constants/social'
-import type { SocialObj } from 'types/socials'
 
 export const Socials = (): JSX.Element => {
   return (
