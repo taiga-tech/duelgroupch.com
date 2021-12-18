@@ -1,5 +1,5 @@
 // types
-import type { RouteObj } from 'types/route'
+import type { RouteObj } from 'constants/types/route'
 // react modules
 import { useState } from 'react'
 // mui components
