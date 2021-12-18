@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'lib/fsHelper'
-import { notionFetch } from 'lib/getNotionApi'
+import { notionFetch } from 'lib/notion/integrations/getNotionPageData'
 // import { notionParse } from 'lib/notionParse'
 
 export const makeCache = async (filePath = '', fetchConfig) => {

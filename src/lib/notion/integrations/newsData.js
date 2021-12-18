@@ -1,4 +1,4 @@
-import { notionFetch } from 'lib/getNotionApi'
+import { notionFetch } from 'lib/notion/integrations/getNotionPageData'
 
 /**
  * notionとfeedを合体

@@ -1,10 +1,10 @@
 import { Client } from '@notionhq/client'
-import { makeCache } from 'lib/makeCache'
+import { makeCache } from 'lib/notion/integrations/makeCache'
 
 const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_API_KEY })
 
 export const getNotionApi = async (databaseId = '', queryOptons = {}) => {
-  const cacheFile = 'cache/notion-db-data-cache'
+  const cacheFile = 'cache/.notion-db-data-cache'
 
   return await makeCache(cacheFile, { databaseId, queryOptons })
 }
