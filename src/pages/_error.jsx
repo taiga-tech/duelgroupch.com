@@ -48,7 +48,7 @@ const Error = ({ statusCode }) => {
             />
             <CardActions sx={{ justifyContent: 'space-between' }}>
               <Link href="/" passHref>
-                <Button sx={{ color: 'white' }} size="large ">
+                <Button sx={{ color: 'white' }} size="large">
                   Home
                 </Button>
               </Link>
