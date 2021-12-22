@@ -5,7 +5,7 @@ interface Image {
 }
 
 export type Seo = {
-  page?: string | undefined
+  page: string | undefined | null
   description?: string
   images?: Image[]
 }
