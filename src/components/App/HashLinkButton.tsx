@@ -1,5 +1,4 @@
 // mui components
-// import { ButtonLink } from 'components/App/ButtonLink'
 import Button from '@mui/material/Button'
 import { HashLink } from 'components/App/HashLink'
 
@@ -14,7 +13,14 @@ const headerSx = {
 export const HashLinkButton = ({ href, offset, sx, children }) => {
   return (
     <HashLink href={href} offset={offset}>
-      <Button sx={sx ? sx : headerSx}>{children}</Button>
+      <Button
+        sx={sx ? sx : headerSx}
+        onClick={() => {
+          history.replaceState('', '', href)
+        }}
+      >
+        {children}
+      </Button>
     </HashLink>
   )
 }
