@@ -82,6 +82,7 @@ export const AnchorDrawer = ({
         <MenuIcon />
       </IconButton>
       <Drawer
+        elevation={0}
         anchor={position}
         open={state[position]}
         onClose={toggleDrawer(position, false)}
