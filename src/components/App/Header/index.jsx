@@ -35,6 +35,7 @@ export const Header = ({ headerPosition }) => {
 
   return (
     <AppBar
+      elevation={0}
       sx={{
         backgroundColor: headerPosition
           ? trigger
@@ -55,7 +56,7 @@ export const Header = ({ headerPosition }) => {
           >
             <Box className="IconWrapper" sx={{ height: '40px', width: '40px' }}>
               <AnchorDrawer position="left" />
-              {/* Todo Left Icon */}
+              {/* TODO: Left Icon */}
               {/* <IconButton
                 sx={{
                   color: 'white',
@@ -136,7 +137,7 @@ export const Header = ({ headerPosition }) => {
               {/*  */}
             </Stack>
             <Box className="IconWrapper" sx={{ height: '40px', width: '40px' }}>
-              {/* Todo Right Icon */}
+              {/* TODO: Right Icon */}
               {/* <ThemeSwich /> */}
             </Box>
           </Stack>
