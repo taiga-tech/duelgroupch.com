@@ -1,7 +1,7 @@
 const BaseUrl = process.env.BASE_URL
 
 export const SEO = {
-  titleTemplate: 'DUEL GROUP - %s',
+  titleTemplate: '%s - DUEL GROUP',
   defaultTitle: 'DUEL GROUP official',
   // outputs: Next SEO
   description: 'Official Site of our YouTube channel',
