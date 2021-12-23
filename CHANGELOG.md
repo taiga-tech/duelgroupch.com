@@ -39,3 +39,4 @@
 
 - It does not mean that all changed to Typescript, Scheduled to change gradually.
 - i18n
+- create notion color palette
