@@ -1,3 +1,4 @@
+// next
 import { NextApiRequest, NextApiResponse } from 'next'
 
 export function setHeaders(req: NextApiRequest, res: NextApiResponse): boolean {
