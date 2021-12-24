@@ -1,7 +1,8 @@
 export const notionParse = async (pageData) => {
   const results = pageData.results
+  let properties = null
   results.map((result, i) => {
-    properties = result.properties
+    properties = result?.properties
     console.log(i, properties)
   })
 
