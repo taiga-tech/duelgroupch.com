@@ -1,3 +1,6 @@
+// other components
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 const collectText = (el, acc = []) => {
   if (el) {
     if (typeof el === 'string') acc.push(el)
@@ -19,9 +22,17 @@ const Heading = ({ children: component, id }: { children: any; id?: any }) => {
   }
 
   return (
-    <a href={`#${id}`} id={id} style={{ color: 'inherit' }}>
+    <AnchorLink
+      href={`#${id}`}
+      offset="110"
+      id={id}
+      onClick={() => {
+        history.replaceState('', '', `#${id}`)
+      }}
+      style={{ color: 'inherit', textDecoration: 'none' }}
+    >
       {component}
-    </a>
+    </AnchorLink>
   )
 }
 
