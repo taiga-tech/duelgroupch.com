@@ -21,6 +21,7 @@ const Bookmark = ({ link, title, description, format }) => {
                   {description}
                 </div>
                 <div className={bookmarkStyles.bookmarkLinkWrapper}>
+                  {/* eslint @next/next/no-img-element: off */}
                   <img
                     src={icon}
                     alt="favicon.ico"
