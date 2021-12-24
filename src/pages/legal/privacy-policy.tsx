@@ -207,7 +207,7 @@ const PrivacyPolicy = () => {
           @DuelGroup
         </MuiLink>
       </p>
-      <p align="right">以上</p>
+      <p>以上</p>
     </Wrapper>
   )
 }
