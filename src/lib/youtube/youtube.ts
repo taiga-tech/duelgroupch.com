@@ -19,7 +19,7 @@ const baseParams: baseParams = {
   key: process.env.GOOGLE_API_KEY,
 }
 
-export const fetchVideoInfo = async (params) => {
+export const fetchVideoInfo = async (params?) => {
   const result = await fetch(
     constructUrl(baseUrl, { ...baseParams, ...params }),
     {
