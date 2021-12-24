@@ -31,13 +31,7 @@ const config = {
   },
 }
 
-export const ProfileCanv = ({
-  display,
-  opt,
-}: {
-  display: string
-  opt: object
-}) => {
+const ProfileCanv = ({ display, opt }: { display: string; opt: object }) => {
   const stageRef = useRef(null)
   const [stage, setStage] = useState<any | null>(null)
 
@@ -106,3 +100,5 @@ export const ProfileCanv = ({
     </Box>
   )
 }
+
+export default ProfileCanv
