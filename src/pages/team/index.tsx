@@ -2,7 +2,7 @@
 import { MainLayout } from 'layouts/main'
 
 const Teams = () => {
-  const seo = {}
+  const seo = { page: 'team' }
 
   return (
     <MainLayout seo={seo}>
