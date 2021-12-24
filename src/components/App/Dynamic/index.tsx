@@ -16,6 +16,7 @@ const components = {
   Counter: dynamic(() => import('components/App/Dynamic/counter')),
   Equation: dynamic(() => import('components/App/Dynamic/equation')),
   Table: dynamic(() => import('components/App/Dynamic/table')),
+  Bookmark: dynamic(() => import('components/App/Dynamic/bookmark')),
 }
 
 export default components
