@@ -18,7 +18,15 @@ import { MainLayout } from 'layouts/main'
 import { ThemeToggle } from 'components/App/Theme/ThemeToggle'
 import { HashLink } from 'components/App/HashLink'
 
-const SettingWrapper = ({ title, subheader, children }) => {
+const SettingWrapper = ({
+  title,
+  subheader,
+  children,
+}: {
+  title: string
+  subheader?: any
+  children: any
+}) => {
   return (
     <Card
       sx={{
