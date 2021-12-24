@@ -1,6 +1,4 @@
-import type { PaletteMode } from '@mui/material'
-
-export const getDesignTokens = (mode: PaletteMode) => ({
+export const getDesignTokens = (mode: boolean) => ({
   // example of a components style overrides
   // components: {
   //   MuiAppBar: {
