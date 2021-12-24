@@ -1,4 +1,5 @@
 // use commonjs so it can be required without transpiling
+// node
 const path = require('path')
 
 const normalizeId = (id) => {
