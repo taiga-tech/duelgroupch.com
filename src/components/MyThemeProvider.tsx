@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { getDesignTokens } from 'lib/getDesignTokens'
 
 export const ThemeContext = createContext([
-  false,
+  {} as any,
   'system',
   () => {},
   () => {},
@@ -19,7 +19,7 @@ export const MyThemeProvider = ({ children }) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
   // const preferredMode = prefersDarkMode ? 'on' : 'off'
   const [darkMode, setDarkMode] = useState(true) // default: dark moide
-  const [lsTheme, setLsTheme] = useState()
+  const [lsTheme, setLsTheme] = useState('')
 
   const handleLightMode = () => {
     localStorage.setItem('ThemeMode', 'light')
