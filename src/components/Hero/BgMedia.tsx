@@ -11,7 +11,7 @@ export const BgMedia = ({ children, video, poster }) => {
     <Box style={{ height: '100vh' }}>
       <Box
         component="video"
-        sx={{
+        style={{
           position: 'absolute',
           left: 0,
           top: 0,
@@ -23,15 +23,14 @@ export const BgMedia = ({ children, video, poster }) => {
           userSelect: 'none',
           pointerEvents: 'none',
           objectFit: 'cover',
-          fontFamily: 'object-fit: cover',
         }}
         // poster={poster}
         autoPlay={vConf.autoPlay}
         muted
         loop
         playsInline
-        webkitPlaysInline
         preload="metadata"
+        // webkitPlaysInline // Type check failed
       >
         <source src={video} />
         <source src={poster} />
