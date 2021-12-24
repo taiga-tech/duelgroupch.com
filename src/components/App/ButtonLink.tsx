@@ -1,3 +1,5 @@
+// types
+import { SxProps } from '@mui/system'
 // next components
 import Link from 'next/link'
 // mui components
@@ -12,7 +14,19 @@ const headerSx = {
 }
 
 export const ButtonLink = (
-  { className, href, hrefAs, sx, children },
+  {
+    className,
+    href,
+    hrefAs,
+    sx,
+    children,
+  }: {
+    className?: string
+    href: string
+    hrefAs?: string
+    sx?: SxProps
+    children: any
+  },
   props
 ) => (
   <Link href={href} as={hrefAs} passHref>
