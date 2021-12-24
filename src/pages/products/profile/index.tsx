@@ -6,10 +6,9 @@ import Box from '@mui/material/Box'
 // local components
 import { MainLayout } from 'layouts/main'
 
-const ProfileCanv = dynamic(
-  () => import('components/Canvas/index').then((module) => module.ProfileCanv),
-  { ssr: false }
-)
+const ProfileCanv = dynamic(() => import('components/Canvas/index'), {
+  ssr: false,
+})
 
 const Profile = () => {
   const seo = { page: 'profile', description: '' }
