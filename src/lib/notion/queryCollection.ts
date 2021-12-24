@@ -1,3 +1,4 @@
+// local libs
 import rpc from 'lib/notion/rpc'
 
 export default function queryCollection({
