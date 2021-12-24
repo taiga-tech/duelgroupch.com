@@ -1,7 +1,5 @@
 // react modules
 import { useState, useContext } from 'react'
-// next components
-import Link from 'next/link'
 // mui modules
 import { styled, alpha } from '@mui/material/styles'
 // mui components
