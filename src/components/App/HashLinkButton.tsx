@@ -1,5 +1,6 @@
 // mui components
 import Button from '@mui/material/Button'
+import { SxProps } from '@mui/system'
 import { HashLink } from 'components/App/HashLink'
 
 const headerSx = {
@@ -10,7 +11,17 @@ const headerSx = {
   width: '80px',
 }
 
-export const HashLinkButton = ({ href, offset, sx, children }) => {
+export const HashLinkButton = ({
+  href,
+  offset,
+  sx,
+  children,
+}: {
+  href: string
+  offset?: number | string
+  sx?: SxProps
+  children: any
+}) => {
   return (
     <HashLink href={href} offset={offset}>
       <Button
