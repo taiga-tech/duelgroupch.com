@@ -7,7 +7,13 @@ const defaultSizes = {
   height: 100,
 }
 
-export const DGLogo = ({ width, height }) => {
+export const DGLogo = ({
+  width,
+  height,
+}: {
+  width?: number | string
+  height?: number | string
+}) => {
   return (
     <Image
       src={logo}
