@@ -5,7 +5,7 @@ import { notionFetch } from 'lib/notion/integrations/getNotionPageData'
  */
 
 export const parsedNotionNews = async () => {
-  const data = await notionFetch()
+  const data = <any>await notionFetch()
   const parsedData = []
   data.map((item) => {
     parsedData.push(item)
