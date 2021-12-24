@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 // local components
 import { Section } from 'components/App/Section'
+import { Socials } from 'components/App/Socials'
 
 export const ComingSoon = () => (
   <Section>
@@ -14,9 +15,12 @@ export const ComingSoon = () => (
         height: '100%',
       }}
     >
-      <Typography variant="h3" component="div">
-        ComingSoon...
-      </Typography>
+      <Box>
+        <Typography variant="h3" component="div">
+          ComingSoon...
+        </Typography>
+        <Socials />
+      </Box>
     </Box>
   </Section>
 )
