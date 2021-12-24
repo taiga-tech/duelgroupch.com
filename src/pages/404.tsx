@@ -21,7 +21,7 @@ const Custom404 = () => {
   return (
     <MainLayout seo={seo}>
       <Container sx={{ height: 'calc(100vh - 90px)' }}>
-        <Dialog open maxwith="lg" fullWidth>
+        <Dialog open maxWidth="lg" fullWidth>
           <Card
             sx={{
               color: 'white',
@@ -43,7 +43,7 @@ const Custom404 = () => {
             />
             <CardActions sx={{ justifyContent: 'space-between' }}>
               <Link href="/" passHref>
-                <Button sx={{ color: 'white' }} size="large ">
+                <Button sx={{ color: 'white' }} size="large">
                   Home
                 </Button>
               </Link>
