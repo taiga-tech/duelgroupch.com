@@ -1,4 +1,4 @@
-export const getDesignTokens = (mode: boolean) => ({
+export const getDesignTokens = (mode: boolean): object => ({
   // example of a components style overrides
   // components: {
   //   MuiAppBar: {
