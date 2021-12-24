@@ -16,14 +16,13 @@ declare global {
 }
 
 const TwitterWidgets = () => {
-  const [theme, lsTheme, handleLightMode, handleSystemTheme, handleDarkMode] =
-    useContext(ThemeContext)
+  const [theme] = useContext(ThemeContext)
 
   useEffect(() => {
     const twitterSrc = 'https://platform.twitter.com/widgets.js'
 
-    if (window?.twttr.widgets) {
-      window?.twttr.widgets.load()
+    if (window.twttr?.widgets) {
+      window.twttr.widgets.load()
     } else if (!document.querySelector(`script[src="${twitterSrc}"]`)) {
       const script = document.createElement('script')
       script.async = true
@@ -38,7 +37,7 @@ const TwitterWidgets = () => {
         className="twitter-timeline"
         data-width="360"
         data-height="640"
-        data-theme={theme}
+        data-theme={theme.palette.mode}
         href="https://twitter.com/DuelGroup?ref_src=twsrc%5Etfw"
       >
         Tweets by DuelGroup
