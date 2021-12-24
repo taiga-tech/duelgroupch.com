@@ -18,8 +18,9 @@ import { MenuItemLink } from 'components/App/MenuItemLink'
 // local const
 import { ROUTE } from 'constants/route'
 
-const StyledMenu = styled((props) => (
+const StyledMenu = styled((props: any) => (
   <Menu
+    open={props.open}
     elevation={0}
     anchorOrigin={{
       vertical: 'bottom',
@@ -77,12 +78,12 @@ export const ThemeSwich = () => {
   return (
     <>
       <IconButton
+        onClick={handleClick}
+        title="Setting"
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        variant="contained"
         aria-label="setting"
-        title="Setting"
-        onClick={handleClick}
+        // variant="contained"
       >
         {theme.palette.mode === 'dark' ? (
           <DarkModeOutlinedIcon />
@@ -90,15 +91,7 @@ export const ThemeSwich = () => {
           <LightModeIcon />
         )}
       </IconButton>
-      <StyledMenu
-        id="demo-customized-menu"
-        MenuListProps={{
-          'aria-labelledby': 'demo-customized-button',
-        }}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
+      <StyledMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={handleLightMode}>
           <LightModeIcon />
           Light
