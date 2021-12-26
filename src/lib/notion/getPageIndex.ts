@@ -1,6 +1,9 @@
 // local libs
 import { readFile, writeFile } from 'lib/fsHelper'
-import { PAGE_INDEX_ID, PAGE_INDEX_CACHE } from 'lib/notion/server-constants'
+import {
+  PAGE_INDEX_ID,
+  PAGE_INDEX_CACHE,
+} from 'constants/notion/server-constants'
 import rpc, { values } from 'lib/notion/rpc'
 import { getPostPreview } from 'lib/notion/getPostPreview'
 import getTableData from 'lib/notion/getTableData'

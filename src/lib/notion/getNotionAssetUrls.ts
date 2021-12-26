@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 import { NextApiResponse } from 'next'
 // local lib
 import { getError } from 'lib/notion/rpc'
-import { NOTION_TOKEN, API_ENDPOINT } from 'lib/notion/server-constants'
+import { NOTION_TOKEN, API_ENDPOINT } from 'constants/notion/server-constants'
 
 export default async function getNotionAsset(
   res: NextApiResponse,

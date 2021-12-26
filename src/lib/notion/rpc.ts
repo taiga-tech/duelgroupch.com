@@ -1,7 +1,7 @@
 // node
 import fetch, { Response } from 'node-fetch'
 // local libs
-import { API_ENDPOINT, NOTION_TOKEN } from 'lib/notion/server-constants'
+import { API_ENDPOINT, NOTION_TOKEN } from 'constants/notion/server-constants'
 
 export default async function rpc(fnName: string, body: any) {
   if (!NOTION_TOKEN) {

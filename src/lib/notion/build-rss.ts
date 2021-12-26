@@ -10,7 +10,7 @@ import { postIsPublished, getPageLink } from 'lib/notion/notion-helpers'
 import { textBlock } from 'lib/notion/renderers'
 import getPageIndex from 'lib/notion/getPageIndex'
 import getNotionUsers from 'lib/notion/getNotionUsers'
-import serverConstants from 'lib/notion/server-constants'
+import serverConstants from 'constants/notion/server-constants'
 
 // must use weird syntax to bypass auto replacing of NODE_ENV
 process.env['NODE' + '_ENV'] = 'production'
