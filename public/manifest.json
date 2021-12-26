@@ -1,7 +1,7 @@
 {
   "name": "DUEL GROUP official",
   "short_name": "DUELGROUP official",
-  "description": "",
+  "description": "Official Site of our YouTube channel",
   "start_url": "/?standalone=true",
   "display": "standalone",
   "orientation": "any",
