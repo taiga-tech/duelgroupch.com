@@ -2,6 +2,7 @@
 import React from 'react'
 // local components
 import components from 'components/App/Dynamic'
+import 'katex/dist/katex.css'
 
 function applyTags(tags = [], children, noPTag = false, key) {
   let child = children
