@@ -1,7 +1,8 @@
 // katex
-import { renderToString, ParseError } from 'katex'
+import katex, { renderToString, ParseError } from 'katex'
+import 'katex/dist/katex.css'
 
-function render(expression: string, displayMode: boolean): string {
+const render = (expression: string, displayMode: boolean): string => {
   let result: string
   try {
     result = renderToString(expression, { displayMode: displayMode })
@@ -17,6 +18,8 @@ function render(expression: string, displayMode: boolean): string {
 }
 
 const Equation = ({ children, displayMode = true }) => {
+  // TODO: can not export 'katex' css and fonts at webpack problem maybe
+
   return (
     <span
       dangerouslySetInnerHTML={{
