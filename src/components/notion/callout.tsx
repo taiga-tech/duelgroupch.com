@@ -6,8 +6,6 @@ import Box from '@mui/material/Box'
 import { textBlock } from 'lib/notion/renderers'
 
 const Callout = ({ id, value, properties }) => {
-  console.log('Callout', value)
-
   return (
     <Box
       sx={{
