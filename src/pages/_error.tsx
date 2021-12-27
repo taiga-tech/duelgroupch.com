@@ -26,7 +26,7 @@ const Error = ({ statusCode }) => {
   return (
     <MainLayout seo={seo}>
       <Container sx={{ height: 'calc(100vh - 90px)' }}>
-        <Dialog open maxWidth="lg" fullWidth>
+        <Dialog open fullWidth>
           <Card
             sx={{
               color: 'white',
