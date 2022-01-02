@@ -1,21 +1,107 @@
 // next
 import Link from 'next/link'
-import Header from 'components/App/Dynamic/header'
+// mui components
+import MuiLink from '@mui/material/Link'
+import Box from '@mui/material/Box'
 // local lib
 import {
-  getBlogLink,
+  getPageLink,
   getDateStr,
   postIsPublished,
 } from 'lib/notion/notion-helpers'
 import { textBlock } from 'lib/notion/renderers'
 import getNotionUsers from 'lib/notion/getNotionUsers'
-import getBlogIndex from 'lib/notion/getBlogIndex'
-// styles
-import blogStyles from 'styles/blog.module.css'
-import sharedStyles from 'styles/shared.module.css'
+import getPageIndex from 'lib/notion/getPageIndex'
+// local components
+import { MainLayout } from 'layouts/main'
+import Preview from 'components/notion/preview'
 
-export async function getStaticProps({ preview }) {
-  const postsTable = await getBlogIndex()
+const Index = ({ posts = [], preview }) => {
+  const seo = { page: 'Blog' }
+
+  return (
+    <MainLayout seo={seo}>
+      <Box sx={{ pt: 3, pb: 10 }}>
+        {preview && <Preview />}
+        <Box sx={{ padding: '0 5%' }}>
+          <Box
+            component="h1"
+            sx={{ textAlign: 'center', marginBottom: '50px' }}
+          >
+            Notion Page
+          </Box>
+          {posts.length === 0 && (
+            <Box component="p" sx={{ textAlign: 'center' }}>
+              There are no posts yet
+            </Box>
+          )}
+          {posts.map((post) => (
+            <Box
+              key={post.Slug}
+              sx={{
+                maxWidth: '600px',
+                m: '10px auto',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.8)',
+                ':last-child': {
+                  borderBottom: 'none',
+                },
+              }}
+            >
+              <Box component="h3" sx={{ mb: 0 }}>
+                <Box
+                  component="span"
+                  sx={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+                  }}
+                >
+                  {post.Published !== 'Yes' && (
+                    <Box
+                      component="span"
+                      sx={{
+                        borderRadius: '16px',
+                        backgroundColor: 'black',
+                        color: 'white',
+                        fontSize: '14px',
+                        fontWeight: '200',
+                        p: '2px 7px',
+                        mr: '6px',
+                      }}
+                    >
+                      Draft
+                    </Box>
+                  )}
+                  <Link
+                    href="/blog/[slug]"
+                    as={getPageLink(post.Prop, post.Slug)}
+                    passHref
+                  >
+                    <MuiLink>{post.Page}</MuiLink>
+                  </Link>
+                </Box>
+              </Box>
+              {post.Authors.length > 0 && (
+                <Box>By: {post.Authors.join(' ')}</Box>
+              )}
+              {post.Date && <Box>Posted: {getDateStr(post.Date)}</Box>}
+              <p>
+                {(!post.preview || post.preview.length === 0) &&
+                  'No preview available'}
+                {(post.preview || []).map((block, idx) =>
+                  textBlock(block, true, `${post.Slug}${idx}`)
+                )}
+              </p>
+            </Box>
+          ))}
+        </Box>
+      </Box>
+    </MainLayout>
+  )
+}
+
+export const getStaticProps = async ({ preview }) => {
+  const postsTable = await getPageIndex()
 
   const authorsToGet: Set<string> = new Set()
   const posts: any[] = Object.keys(postsTable)
@@ -46,63 +132,6 @@ export async function getStaticProps({ preview }) {
     },
     revalidate: 10,
   }
-}
-
-const Index = ({ posts = [], preview }) => {
-  return (
-    <>
-      <Header titlePre="Blog" />
-      {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
-            <b>Note:</b>
-            {` `}Viewing in preview mode{' '}
-            <Link href={`/api/clear-preview`} passHref>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
-            </Link>
-          </div>
-        </div>
-      )}
-      <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
-        <h1>My Notion Blog</h1>
-        {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>There are no posts yet</p>
-        )}
-        {posts.map((post) => {
-          return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
-              <h3>
-                <span className={blogStyles.titleContainer}>
-                  {!post.Published && (
-                    <span className={blogStyles.draftBadge}>Draft</span>
-                  )}
-                  <Link
-                    href="/blog/[slug]"
-                    as={getBlogLink(post.Prop, post.Slug)}
-                  >
-                    <a>{post.Page}</a>
-                  </Link>
-                </span>
-              </h3>
-              {post.Authors.length > 0 && (
-                <div className="authors">By: {post.Authors.join(' ')}</div>
-              )}
-              {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
-              )}
-              <p>
-                {(!post.preview || post.preview.length === 0) &&
-                  'No preview available'}
-                {(post.preview || []).map((block, idx) =>
-                  textBlock(block, true, `${post.Slug}${idx}`)
-                )}
-              </p>
-            </div>
-          )
-        })}
-      </div>
-    </>
-  )
 }
 
 export default Index
