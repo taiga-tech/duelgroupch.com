@@ -1,5 +1,6 @@
 // next components
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 // mui components
 import Container from '@mui/material/Container'
 import Dialog from '@mui/material/Dialog'
@@ -17,6 +18,7 @@ import { Socials } from 'components/App/Socials'
 const Custom404 = () => {
   const pageNotFound = '404 Page Not Found'
   const seo = { page: pageNotFound }
+  const router = useRouter()
 
   return (
     <MainLayout seo={seo}>
@@ -42,11 +44,20 @@ const Custom404 = () => {
               avatar={<CloudOffTwoToneIcon color="error" />}
             />
             <CardActions sx={{ justifyContent: 'space-between' }}>
-              <Link href="/" passHref>
-                <Button sx={{ color: 'white' }} size="large">
-                  Home
+              <span>
+                <Button
+                  onClick={() => router.back()}
+                  sx={{ color: 'white' }}
+                  size="large"
+                >
+                  Back
                 </Button>
-              </Link>
+                <Link href="/" passHref>
+                  <Button sx={{ color: 'white' }} size="large">
+                    Home
+                  </Button>
+                </Link>
+              </span>
               <Socials />
             </CardActions>
           </Card>
