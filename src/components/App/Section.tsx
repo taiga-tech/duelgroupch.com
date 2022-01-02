@@ -1,8 +1,16 @@
+// types
+import { Breakpoint } from '@mui/system'
 // mui components
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 
-export const Section = ({ children }) => {
+export const Section = ({
+  children,
+  maxWidth,
+}: {
+  children: any
+  maxWidth?: false | Breakpoint
+}) => {
   return (
     <Box>
       <Container
@@ -15,6 +23,7 @@ export const Section = ({ children }) => {
           maxHeight: { xs: 700, sm: 700, xl: 1000 },
           transition: '0.3s',
         }}
+        maxWidth={maxWidth}
       >
         {children}
       </Container>
