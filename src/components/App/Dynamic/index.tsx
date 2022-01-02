@@ -2,8 +2,7 @@
 import dynamic from 'next/dynamic'
 // local components
 import ExtLink from 'components/App/Dynamic/ext-link'
-import { Typography } from '@mui/material'
-// import Typography from '@mui/material/Typography'
+import Typography from '@mui/material/Typography'
 
 const components = {
   // default tags
@@ -11,7 +10,6 @@ const components = {
   ul: 'ul',
   li: 'li',
   p: 'p',
-  // p: Typography,
   blockquote: 'blockquote',
   a: ExtLink,
   P: Typography,
