@@ -5,7 +5,7 @@ import Box from '@mui/material/Box'
 
 const Code = ({ children, language }: { children: any; language: string }) => {
   return (
-    <Box component="pre">
+    <Box component="pre" sx={{ p: 1 }}>
       <Box
         component="code"
         sx={{
