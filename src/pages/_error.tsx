@@ -13,6 +13,7 @@ import CloudOffTwoToneIcon from '@mui/icons-material/CloudOffTwoTone'
 // local components
 import { MainLayout } from 'layouts/main'
 import { Socials } from 'components/App/Socials'
+import { useRouter } from 'next/router'
 
 const Error = ({ statusCode }) => {
   const pageNotFound = `${statusCode} Page Not Found`
@@ -22,6 +23,7 @@ const Error = ({ statusCode }) => {
   const title = statusCode === 404 ? pageNotFound : otherError
   console.log(statusCode)
   const seo = { page: title }
+  const router = useRouter()
 
   return (
     <MainLayout seo={seo}>
@@ -47,11 +49,22 @@ const Error = ({ statusCode }) => {
               avatar={<CloudOffTwoToneIcon color="error" />}
             />
             <CardActions sx={{ justifyContent: 'space-between' }}>
-              <Link href="/" passHref>
-                <Button sx={{ color: 'white' }} size="large">
-                  Home
+              <span>
+                <Button
+                  onClick={() => router.back()}
+                  sx={{ color: 'white' }}
+                  size="large"
+                  variant="contained"
+                >
+                  Back
                 </Button>
-              </Link>
+
+                <Link href="/" passHref>
+                  <Button sx={{ color: 'white' }} size="large">
+                    Home
+                  </Button>
+                </Link>
+              </span>
               <Socials />
             </CardActions>
           </Card>
