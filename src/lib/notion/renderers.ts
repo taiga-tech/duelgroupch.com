@@ -4,7 +4,7 @@ import React from 'react'
 import components from 'components/App/Dynamic'
 import 'katex/dist/katex.css'
 
-function applyTags(tags = [], children, noPTag = false, key) {
+const applyTags = (tags = [], children, noPTag = false, key) => {
   let child = children
 
   for (const tag of tags) {
@@ -12,14 +12,22 @@ function applyTags(tags = [], children, noPTag = false, key) {
     let tagName = tag[0]
 
     if (noPTag && tagName === 'p') tagName = React.Fragment
-    if (tagName === 'c') tagName = 'code'
+    if (tagName === 'c') {
+      tagName = 'code'
+      props.style = {
+        background: 'rgba(60, 65, 68, 0.5)',
+        fontSize: '0.8rem',
+        padding: '0.3rem',
+        borderRadius: '3px',
+        fontFamily: "'Lucida Console', Courier, monospace",
+        color: '#eb5757',
+      }
+    }
     if (tagName === '_') {
       tagName = 'span'
-      props.className = 'underline'
+      props.style = { textDecoration: 'underline' }
     }
-    if (tagName === 'a') {
-      props.href = tag[1]
-    }
+    if (tagName === 'a') props.href = tag[1]
     if (tagName === 'e') {
       tagName = components.Equation
       props.displayMode = false
@@ -31,7 +39,7 @@ function applyTags(tags = [], children, noPTag = false, key) {
   return child
 }
 
-export function textBlock(text = [], noPTag = false, mainKey) {
+export const textBlock = (text = [], noPTag = false, mainKey) => {
   const children = []
   let key = 0
 
@@ -44,7 +52,7 @@ export function textBlock(text = [], noPTag = false, mainKey) {
     children.push(applyTags(textItem[1], textItem[0], noPTag, key))
   }
   return React.createElement(
-    noPTag ? React.Fragment : components.p,
+    noPTag ? React.Fragment : components.P,
     { key: mainKey },
     ...children,
     noPTag
