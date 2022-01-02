@@ -13,10 +13,11 @@ const Code = ({ children, language }: { children: any; language: string }) => {
           display: 'block',
           p: 3,
           lineHeight: 1.5,
-          background: '#111b27',
+          // background: '#111b27',
+          background: '#202020',
           fontSize: 14,
           borderRadius: '0.5rem',
-          maxHeight: 500,
+          // maxHeight: 500,
           tabSize: 2,
           fontFamily:
             'Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
