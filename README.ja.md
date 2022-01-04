@@ -23,15 +23,16 @@ News 一覧は NotionAPI（Bata）でデータを Fetch しており、Notion �
 
 ## Dependency
 
-|         | Version          |
-| ------- | ---------------- |
-| Mac OS  | Catalina 10.15.7 |
-| Node    | v16.13.0         |
-| Yarn    | v3.1.1           |
-| Next.js | v12.0.3          |
-| React   | v17.0.2          |
-| MUI     | v5.2.2           |
-| Hosting | Vercel           |
+|            | Version          |
+| ---------- | ---------------- |
+| Mac OS     | Catalina 10.15.7 |
+| Node       | v16.13.0         |
+| TypeScript | v4.5.4           |
+| Yarn       | v3.1.1           |
+| Next.js    | v12.0.3          |
+| React      | v17.0.2          |
+| MUI        | v5.2.2           |
+| Hosting    | Vercel           |
 
 ## Features
 
