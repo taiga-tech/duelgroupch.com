@@ -33,7 +33,7 @@ const header = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   res.setPreviewData({})
-  res.writeHead(307, { Location: getPageLink(post.Prop, post.Slug) })
+  res.writeHead(307, { Location: getPageLink(post.Params, post.Slug) })
   res.end()
 }
 
