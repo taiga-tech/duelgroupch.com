@@ -74,7 +74,7 @@ const Index = ({ posts = [], preview }) => {
                   )}
                   <Link
                     href="/blog/[slug]"
-                    as={getPageLink(post.Prop, post.Slug)}
+                    as={getPageLink(post.Params, post.Slug)}
                     passHref
                   >
                     <MuiLink>{post.Page}</MuiLink>
@@ -107,6 +107,8 @@ export const getStaticProps = async ({ preview }) => {
   const posts: any[] = Object.keys(postsTable)
     .map((slug) => {
       const post = postsTable[slug]
+      if (post.Params !== 'blog') return null
+
       // remove draft posts in production
       if (!preview && !postIsPublished(post)) {
         return null
