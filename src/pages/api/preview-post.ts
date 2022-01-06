@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 // local libs
 import getPageData from 'lib/notion/getPageData'
 import getPageIndex from 'lib/notion/getPageIndex'
-import { getPageLink } from 'lib/notion/notion-helpers'
+import { getPageLink } from 'lib/notion/notionHelpers'
 
 const header = async (req: NextApiRequest, res: NextApiResponse) => {
   if (typeof req.query.token !== 'string') {

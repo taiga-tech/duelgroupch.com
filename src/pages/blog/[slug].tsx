@@ -17,7 +17,7 @@ import { textBlock } from 'lib/notion/renderers'
 import getPageData from 'lib/notion/getPageData'
 import getPageIndex from 'lib/notion/getPageIndex'
 import getNotionUsers from 'lib/notion/getNotionUsers'
-import { getPageLink, getDateStr } from 'lib/notion/notion-helpers'
+import { getPageLink, getDateStr } from 'lib/notion/notionHelpers'
 // local components
 import { MainLayout } from 'layouts/main'
 import components from 'components/App/Dynamic'

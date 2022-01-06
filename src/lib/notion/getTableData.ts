@@ -1,7 +1,7 @@
 // local libs
 import { values } from 'lib/notion/rpc'
 import queryCollection from 'lib/notion/queryCollection'
-import { normalizeSlug } from 'lib/notion/notion-helpers'
+import { normalizeSlug } from 'lib/notion/notionHelpers'
 // other libs
 import Slugger from 'github-slugger'
 

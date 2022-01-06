@@ -8,7 +8,7 @@ import {
   getPageLink,
   getDateStr,
   postIsPublished,
-} from 'lib/notion/notion-helpers'
+} from 'lib/notion/notionHelpers'
 import { textBlock } from 'lib/notion/renderers'
 import getNotionUsers from 'lib/notion/getNotionUsers'
 import getPageIndex from 'lib/notion/getPageIndex'
