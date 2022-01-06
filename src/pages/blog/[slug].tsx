@@ -92,9 +92,15 @@ const RenderPost = ({ post, redirect, preview }) => {
   }
 
   // TODO: default ogp image
-  const defaultOgpImage = [{ url: '', type: 'image/jpeg' }]
+  const defaultOgpImage = [
+    { url: 'https://www.duelgroupch.com/images/logo.png', type: 'image/png' },
+  ]
   const seo = {
     page: post.Page,
+    description:
+      post.preview || post.preview.length !== 0
+        ? (post.preview || []).map((block, idx) => block).join(' ')
+        : null,
     images: post.Image
       ? [{ url: post.Image, type: 'image/jpeg' }]
       : defaultOgpImage,
@@ -214,7 +220,7 @@ const RenderPost = ({ post, redirect, preview }) => {
               listTagName = null
             }
 
-            const toc = []
+            // const toc = []
 
             const renderHeading = (Type: string | React.ComponentType) => {
               toRender.push(
@@ -518,8 +524,8 @@ export const getStaticPaths = async () => {
   return {
     paths: Object.keys(postsTable)
       .filter((post) => postsTable[post].Published === 'Yes')
-      .map((slug) => getPageLink(postsTable[slug].Prop, slug)),
-    fallback: false, // true,
+      .map((slug) => getPageLink(postsTable[slug].Params, slug)),
+    fallback: true,
   }
 }
 
