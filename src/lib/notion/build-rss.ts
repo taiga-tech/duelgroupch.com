@@ -103,7 +103,7 @@ async function main() {
 
   blogPosts.forEach((post) => {
     post.authors = post.authors.map((id) => users[id])
-    post.link = getPageLink(post.Prop, post.Slug)
+    post.link = getPageLink(post.Params, post.Slug)
     post.title = post.Page
     post.date = post.Date
   })
