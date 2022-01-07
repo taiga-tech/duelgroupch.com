@@ -7,7 +7,7 @@ import IndexWrapper from 'components/notion/indexWrapper'
 
 const NotionIndex = ({ title, posts, preview }) => {
   const seo = { page: capitalize(title) }
-  return <IndexWrapper posts={posts} preview={preview} seo={seo} />
+  return <IndexWrapper seo={seo} posts={posts} preview={preview} />
 }
 
 export const getStaticProps = async ({ params: { notion }, preview }) => {
@@ -55,7 +55,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
