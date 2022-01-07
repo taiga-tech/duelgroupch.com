@@ -67,6 +67,7 @@ const IndexWrapper = ({ seo, posts = [], preview }) => {
                   <Link
                     // href={`/${post.Params}/[slug]`}
                     href={getPageLink(post.Params, post.Slug)}
+                    // as={getPageLink(post.Params, post.Slug)}
                     passHref
                   >
                     <MuiLink>{post.Page}</MuiLink>
