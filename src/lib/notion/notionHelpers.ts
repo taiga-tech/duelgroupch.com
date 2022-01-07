@@ -1,5 +1,14 @@
-export const getPageLink = (prop: string, slug: string) => {
-  return `/${'blog'}/${slug}` // TODO: change this to prop
+export const getParam = (param: string) => {
+  return `/${param}`
+}
+
+export const getPageLink = (param: string, slug: string) => {
+  return `/${param}/${slug}`
+}
+
+export const capitalize = (str) => {
+  if (typeof str !== 'string' || !str) return str
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
 }
 
 export const getDateStr = (date) => {
