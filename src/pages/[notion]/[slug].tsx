@@ -19,20 +19,6 @@ const Slug = ({ post, redirect, preview }) => {
   const router = useRouter()
   // console.log('post', post)
 
-  const defaultOgpImage = [
-    { url: 'https://www.duelgroupch.com/images/logo.png', type: 'image/png' },
-  ]
-  const seo = {
-    page: post.Page,
-    description:
-      post.preview || post.preview.length !== 0
-        ? (post.preview || []).map((block, idx) => block).join(' ')
-        : null,
-    images: post.Image
-      ? [{ url: post.Image, type: 'image/jpeg' }]
-      : defaultOgpImage,
-  }
-
   useEffect(() => {
     if (redirect && !post) {
       router.replace(redirect)
@@ -54,6 +40,21 @@ const Slug = ({ post, redirect, preview }) => {
       </Container>
     )
   }
+
+  const defaultOgpImage = [
+    { url: 'https://www.duelgroupch.com/images/logo.png', type: 'image/png' },
+  ]
+  const seo = {
+    page: post.Page,
+    description:
+      post.preview || post.preview.length !== 0
+        ? (post.preview || []).map((block, idx) => block).join(' ')
+        : null,
+    images: post.Image
+      ? [{ url: post.Image, type: 'image/jpeg' }]
+      : defaultOgpImage,
+  }
+
   return <SlugWrapper seo={seo} post={post} preview={preview} />
 }
 
