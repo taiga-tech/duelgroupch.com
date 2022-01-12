@@ -29,7 +29,7 @@ const Home = ({ video, news }) => (
 )
 
 export const getStaticProps = async () => {
-  const databaseId = process.env.NEXT_PUBLIC_NOTION_DATABASE_ID
+  const databaseId = process.env.NOTION_DATABASE_ID
   const video = await getVideoPageData()
   const news = await getNotionApi(databaseId, {
     sorts: [{ property: 'TimeStamp', direction: 'descending' }],
